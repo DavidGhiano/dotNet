@@ -16,7 +16,7 @@ namespace Modelo
         private float precio;
         private int cantidadCuota;
         private float importeTotal;
-        private List<Lugar> lugar;
+        private List<Lugar> lugares;
 
         public int CantidadDia { get => cantidadDia; set => cantidadDia = value; }
         public bool Estado { get => estado; set => estado = value; }
@@ -26,7 +26,7 @@ namespace Modelo
         public float Precio { get => precio; set => precio = value; }
         public int CantidadCuota { get => cantidadCuota; set => cantidadCuota = value; }
         public float ImporteTotal { get => importeTotal; set => importeTotal = value; }
-        public List<Lugar> Lugar { get => lugar; set => lugar = value; }
+        public List<Lugar> Lugares { get => lugares; set => lugares = value; }
 
         public abstract float CalcularImporte();
         
