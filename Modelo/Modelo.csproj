@@ -45,6 +45,8 @@
     <Compile Include="Factura.cs" />
     <Compile Include="Lugar.cs" />
     <Compile Include="Paquete.cs" />
+    <Compile Include="PaqueteInternacional.cs" />
+    <Compile Include="PaqueteNacional.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

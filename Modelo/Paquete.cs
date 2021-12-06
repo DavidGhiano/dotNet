@@ -18,6 +18,28 @@ namespace Modelo
         private float importeTotal;
         private List<Lugar> lugares;
 
+        protected Paquete(
+            int cantidadDia,
+            bool estado, 
+            DateTime fechaViaje,
+            int idPaquete, 
+            string nombre,
+            float precio, 
+            int cantidadCuota, 
+            float importeTotal, 
+            List<Lugar> lugares)
+        {
+            this.cantidadDia = cantidadDia;
+            this.estado = estado;
+            this.fechaViaje = fechaViaje;
+            this.idPaquete = idPaquete;
+            this.nombre = nombre;
+            this.precio = precio;
+            this.cantidadCuota = cantidadCuota;
+            this.importeTotal = importeTotal;
+            this.lugares = lugares;
+        }
+
         public int CantidadDia { get => cantidadDia; set => cantidadDia = value; }
         public bool Estado { get => estado; set => estado = value; }
         public DateTime FechaViaje { get => fechaViaje; set => fechaViaje = value; }
