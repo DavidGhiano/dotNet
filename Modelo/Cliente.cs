@@ -17,6 +17,18 @@ namespace Modelo
         private string nombre;
         private string dni;
 
+        public Cliente()
+		{
+            this.direccion = "";
+            this.idCliente = 0;
+            this.nacionalidad = "";
+            this.provincia = "";
+            this.telefono = "";
+            this.apellido = "";
+            this.nombre = "";
+            this.dni = "";
+        }
+
         public Cliente(
             string direccion, 
             int idCliente, 

@@ -16,7 +16,8 @@ namespace Modelo
 
         public PaqueteNacional()
         {
-
+            this.ModoDePago = "";
+            this.PorcentajePorImpuestos = 0.0f;
         }
         public PaqueteNacional(
             string modoDePago, 

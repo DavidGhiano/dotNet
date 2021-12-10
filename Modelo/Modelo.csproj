@@ -44,6 +44,7 @@
     <Compile Include="Cliente.cs" />
     <Compile Include="ClienteCorporativo.cs" />
     <Compile Include="Factura.cs" />
+    <Compile Include="LineaDeFactura.cs" />
     <Compile Include="Lugar.cs" />
     <Compile Include="Paquete.cs" />
     <Compile Include="PaqueteInternacional.cs" />

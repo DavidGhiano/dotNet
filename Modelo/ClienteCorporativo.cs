@@ -11,6 +11,12 @@ namespace Modelo
         private string cuit;
         private string razonSocial;
 
+        public ClienteCorporativo()
+		{
+            this.cuit = "";
+            this.razonSocial = "";
+        }
+
         public ClienteCorporativo(
             string cuit,
             string razonSocial,

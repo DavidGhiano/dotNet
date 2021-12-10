@@ -12,6 +12,13 @@ namespace Modelo
         private float importePorImpuestos;
         private bool requiereVisa;
 
+        public PaqueteInternacional()
+		{
+            this.CotizacionDolar = 0.0f;
+            this.ImportePorImpuestos = 0.0f;
+            this.RequiereVisa = false;
+        }
+
         public PaqueteInternacional(
             float cotizacionDolar,
             float importePorImpuestos,

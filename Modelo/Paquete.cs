@@ -27,7 +27,7 @@ namespace Modelo
             this.nombre = "";
             this.precio = 0.0f;
             this.cantidadCuota = 0;
-            this.importeTotal = 0,0;
+            this.importeTotal = 0.0f;
             this.lugares = null;
         }
         protected Paquete(
