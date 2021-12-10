@@ -39,16 +39,6 @@ namespace Modelo
             this.CotizacionDolar = cotizacionDolar;
             this.ImportePorImpuestos = importePorImpuestos;
             this.RequiereVisa = requiereVisa;
-            this.CantidadDia = cantidadDia;
-            this.Estado = estado;
-            this.FechaViaje = fechaViaje;
-            this.IdPaquete = idPaquete;
-            this.Nombre = nombre;
-            this.Precio = precio;
-            this.CantidadCuota = cantidadCuota;
-            this.ImporteTotal = importeTotal;
-            this.Lugares = lugares;
-
         }
 
         public float CotizacionDolar { get => cotizacionDolar; set => cotizacionDolar = value; }

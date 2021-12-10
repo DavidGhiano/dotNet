@@ -14,6 +14,10 @@ namespace Modelo
         public string ModoDePago { get => modoDePago; set => modoDePago = value; }
         public float PorcentajePorImpuestos { get => porcentajePorImpuestos; set => porcentajePorImpuestos = value; }
 
+        public PaqueteNacional()
+        {
+
+        }
         public PaqueteNacional(
             string modoDePago, 
             float porcentajePorImpuestos, 
@@ -38,15 +42,6 @@ namespace Modelo
         {
             this.ModoDePago = modoDePago;
             this.PorcentajePorImpuestos = porcentajePorImpuestos;
-            this.CantidadDia = cantidadDia;
-            this.Estado = estado;
-            this.FechaViaje = fechaViaje;
-            this.IdPaquete = idPaquete;
-            this.Nombre = nombre;
-            this.Precio = precio;
-            this.CantidadCuota = cantidadCuota;
-            this.ImporteTotal = importeTotal;
-            this.Lugares = lugares;
         }
 
         public override float CalcularImporte()

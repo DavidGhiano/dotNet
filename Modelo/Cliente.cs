@@ -17,6 +17,26 @@ namespace Modelo
         private string nombre;
         private string dni;
 
+        public Cliente(
+            string direccion, 
+            int idCliente, 
+            string nacionalidad, 
+            string provincia, 
+            string telefono, 
+            string apellido, 
+            string nombre, 
+            string dni)
+        {
+            this.direccion = direccion;
+            this.idCliente = idCliente;
+            this.nacionalidad = nacionalidad;
+            this.provincia = provincia;
+            this.telefono = telefono;
+            this.apellido = apellido;
+            this.nombre = nombre;
+            this.dni = dni;
+        }
+
         public string Direccion { get => direccion; set => direccion = value; }
         public int IdCliente { get => idCliente; set => idCliente = value; }
         public string Nacionalidad { get => nacionalidad; set => nacionalidad = value; }
