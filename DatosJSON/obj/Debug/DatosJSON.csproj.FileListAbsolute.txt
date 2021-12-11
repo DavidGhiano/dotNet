@@ -1,0 +1,2 @@
+C:\Users\dg260\Desktop\Proyecto .Net\DatosJSON\obj\Debug\DatosJSON.csproj.AssemblyReference.cache
+C:\Users\dg260\Desktop\Proyecto .Net\DatosJSON\obj\Debug\DatosJSON.csproj.CoreCompileInputs.cache

@@ -12,7 +12,7 @@ namespace Modelo
 		private int idFactura;
 		private float importeTotal;
 		private Cliente cliente;
-		private List<LineaDeFactura> lineasDeFactura;
+		public List<LineaDeFactura> lineasDeFactura;
 
 		public Factura()
 		{

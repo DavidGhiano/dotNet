@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Modelo
 {
-	class LineaDeFactura
+	public class LineaDeFactura
 	{
 		private int idFactura;
 		private int idLineaDeFactura;

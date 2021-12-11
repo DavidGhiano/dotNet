@@ -1,0 +1,2 @@
+C:\Users\dg260\Desktop\Proyecto .Net\Modelo\obj\Debug\Modelo.csproj.AssemblyReference.cache
+C:\Users\dg260\Desktop\Proyecto .Net\Modelo\obj\Debug\Modelo.csproj.CoreCompileInputs.cache
