@@ -14,30 +14,44 @@ namespace Modelo
 		private Cliente cliente;
 		private List<LineaDeFactura> lineasDeFactura;
 
+		public static int contadorFacturas = 0;
+
+		static Factura()
+		{
+			contadorFacturas = 1;
+		}
+
 		public Factura()
 		{
 			this.fecha = DateTime.Today;
 			this.idFactura = 0;
 			this.importeTotal = 0.0f;
 			this.Cliente = null;
+			this.lineasDeFactura = null;
+			contadorFacturas++;
 		}
 
-		public Factura(DateTime fecha, int idFactura, float importeTotal, Cliente cliente)
+		public Factura(DateTime fecha, int idFactura, float importeTotal, Cliente cliente, List<LineaDeFactura> lineasDeFactura)
 		{
 			this.fecha = fecha;
 			this.idFactura = idFactura;
 			this.importeTotal = importeTotal;
 			this.Cliente = cliente;
+			this.lineasDeFactura = lineasDeFactura;
+			contadorFacturas++;
 		}
 
 		public DateTime Fecha { get => fecha; set => fecha = value; }
 		public int IdFactura { get => idFactura; set => idFactura = value; }
 		public float ImporteTotal { get => importeTotal; set => importeTotal = value; }
 		public Cliente Cliente { get => cliente; set => cliente = value; }
+		public List<LineaDeFactura> LineasDeFactura { get => lineasDeFactura; set => lineasDeFactura = value; }
 
-		public void crearLineaDeFactura()
+		public void calcularImporte()
 		{
-			LineaDeFactura lf = new LineaDeFactura()
+			float total = 0;
+			lineasDeFactura.ForEach(linea => total += linea.Subtotal);
+			importeTotal = total;
 		}
 	}
 }

@@ -1,0 +1,9 @@
+D:\Cursos\Curso .NET UTN - FRBA\Trabajo Integrador\dotNet\AgenciaDeViajes\bin\Debug\AgenciaDeViajes.exe.config
+D:\Cursos\Curso .NET UTN - FRBA\Trabajo Integrador\dotNet\AgenciaDeViajes\bin\Debug\AgenciaDeViajes.exe
+D:\Cursos\Curso .NET UTN - FRBA\Trabajo Integrador\dotNet\AgenciaDeViajes\bin\Debug\AgenciaDeViajes.pdb
+D:\Cursos\Curso .NET UTN - FRBA\Trabajo Integrador\dotNet\AgenciaDeViajes\bin\Debug\Modelo.dll
+D:\Cursos\Curso .NET UTN - FRBA\Trabajo Integrador\dotNet\AgenciaDeViajes\bin\Debug\Modelo.pdb
+D:\Cursos\Curso .NET UTN - FRBA\Trabajo Integrador\dotNet\AgenciaDeViajes\obj\Debug\AgenciaDeViajes.csproj.AssemblyReference.cache
+D:\Cursos\Curso .NET UTN - FRBA\Trabajo Integrador\dotNet\AgenciaDeViajes\obj\Debug\AgenciaDeViajes.csproj.CoreCompileInputs.cache
+D:\Cursos\Curso .NET UTN - FRBA\Trabajo Integrador\dotNet\AgenciaDeViajes\obj\Debug\AgenciaDeViajes.exe
+D:\Cursos\Curso .NET UTN - FRBA\Trabajo Integrador\dotNet\AgenciaDeViajes\obj\Debug\AgenciaDeViajes.pdb

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Modelo
 {
-    class PaqueteInternacional : Paquete
+    public class PaqueteInternacional : Paquete
     {
         private float cotizacionDolar;
         private float importePorImpuestos;
@@ -52,12 +52,9 @@ namespace Modelo
         public float ImportePorImpuestos { get => importePorImpuestos; set => importePorImpuestos = value; }
         public bool RequiereVisa { get => requiereVisa; set => requiereVisa = value; }
 
-        public override float CalcularImporte()
+        public override void CalcularImporte()
         {
-            // Que hacemos? dolar * precio? y que cantidad de dias sea solo informativo.
-            //Lo mismo que nacional, hacemos otro metodo que calcule el valor total que nos de
-            //la formula segun la opcion que elija si efectivo o 6 cuotas en este caso?
-            return Precio * CotizacionDolar;
+            importeTotal = precio + importePorImpuestos;
         }
     }
 }

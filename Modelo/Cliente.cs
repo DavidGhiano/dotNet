@@ -8,14 +8,21 @@ namespace Modelo
 {
     public class Cliente
     {
-        private string direccion;
-        private int idCliente;
-        private string nacionalidad;
-        private string provincia;
-        private string telefono;
-        private string apellido;
-        private string nombre;
-        private string dni;
+        protected string direccion;
+        protected int idCliente;
+        protected string nacionalidad;
+        protected string provincia;
+        protected string telefono;
+        protected string apellido;
+        protected string nombre;
+        protected string dni;
+
+        public static int contadorClientes = 0;
+
+        static Cliente()
+        {
+            contadorClientes = 1;
+        }
 
         public Cliente()
 		{
@@ -27,6 +34,7 @@ namespace Modelo
             this.apellido = "";
             this.nombre = "";
             this.dni = "";
+            contadorClientes++;
         }
 
         public Cliente(
@@ -47,6 +55,7 @@ namespace Modelo
             this.apellido = apellido;
             this.nombre = nombre;
             this.dni = dni;
+            contadorClientes++;
         }
 
         public string Direccion { get => direccion; set => direccion = value; }

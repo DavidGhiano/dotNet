@@ -6,17 +6,24 @@ using System.Threading.Tasks;
 
 namespace Modelo
 {
-    abstract class Paquete
+    public abstract class Paquete
     {
-        private int cantidadDia;
-        private bool estado;
-        private DateTime fechaViaje;
-        private int idPaquete;
-        private string nombre;
-        private float precio;
-        private int cantidadCuota;
-        private float importeTotal;
-        private List<Lugar> lugares;
+        protected int cantidadDia;
+        protected bool estado;
+        protected DateTime fechaViaje;
+        protected int idPaquete;
+        protected string nombre;
+        protected float precio;
+        protected int cantidadCuota;
+        protected float importeTotal;
+        protected List<Lugar> lugares;
+
+        public static int contadorPaquetes = 0;
+
+        static Paquete()
+        {
+            contadorPaquetes = 1;
+        }
 
         protected Paquete()
         {
@@ -29,6 +36,7 @@ namespace Modelo
             this.cantidadCuota = 0;
             this.importeTotal = 0.0f;
             this.lugares = null;
+            contadorPaquetes++;
         }
         protected Paquete(
             int cantidadDia,
@@ -50,6 +58,7 @@ namespace Modelo
             this.cantidadCuota = cantidadCuota;
             this.importeTotal = importeTotal;
             this.lugares = lugares;
+            contadorPaquetes++;
         }
 
         public int CantidadDia { get => cantidadDia; set => cantidadDia = value; }
@@ -62,7 +71,7 @@ namespace Modelo
         public float ImporteTotal { get => importeTotal; set => importeTotal = value; }
         public List<Lugar> Lugares { get => lugares; set => lugares = value; }
 
-        public abstract float CalcularImporte();
+        public abstract void CalcularImporte();
         
     }
 }

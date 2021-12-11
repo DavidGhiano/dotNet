@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Modelo
 {
-    class PaqueteNacional : Paquete
+    public class PaqueteNacional : Paquete
     {
         private string modoDePago;
         private float porcentajePorImpuestos;
@@ -45,11 +45,9 @@ namespace Modelo
             this.PorcentajePorImpuestos = porcentajePorImpuestos;
         }
 
-        public override float CalcularImporte()
+        public override void CalcularImporte()
         {
-            //Como calculamos el importe? precio solo?
-            //hacmeos otro metodo que si es 12 cuotas haga precio / 12 por si elije eso en las opciones de compra?
-            return Precio;
+            importeTotal = precio * porcentajePorImpuestos;
         }
     }
 }
