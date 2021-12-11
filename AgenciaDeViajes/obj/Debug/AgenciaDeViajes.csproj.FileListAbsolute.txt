@@ -7,3 +7,28 @@ D:\Cursos\Curso .NET UTN - FRBA\Trabajo Integrador\dotNet\AgenciaDeViajes\obj\De
 D:\Cursos\Curso .NET UTN - FRBA\Trabajo Integrador\dotNet\AgenciaDeViajes\obj\Debug\AgenciaDeViajes.csproj.CoreCompileInputs.cache
 D:\Cursos\Curso .NET UTN - FRBA\Trabajo Integrador\dotNet\AgenciaDeViajes\obj\Debug\AgenciaDeViajes.exe
 D:\Cursos\Curso .NET UTN - FRBA\Trabajo Integrador\dotNet\AgenciaDeViajes\obj\Debug\AgenciaDeViajes.pdb
+C:\Users\dg260\Desktop\Proyecto .Net\AgenciaDeViajes\bin\Debug\AgenciaDeViajes.exe.config
+C:\Users\dg260\Desktop\Proyecto .Net\AgenciaDeViajes\bin\Debug\AgenciaDeViajes.exe
+C:\Users\dg260\Desktop\Proyecto .Net\AgenciaDeViajes\bin\Debug\AgenciaDeViajes.pdb
+C:\Users\dg260\Desktop\Proyecto .Net\AgenciaDeViajes\bin\Debug\Modelo.dll
+C:\Users\dg260\Desktop\Proyecto .Net\AgenciaDeViajes\bin\Debug\Modelo.pdb
+C:\Users\dg260\Desktop\Proyecto .Net\AgenciaDeViajes\obj\Debug\AgenciaDeViajes.csproj.AssemblyReference.cache
+C:\Users\dg260\Desktop\Proyecto .Net\AgenciaDeViajes\obj\Debug\AgenciaDeViajes.csproj.CoreCompileInputs.cache
+C:\Users\dg260\Desktop\Proyecto .Net\AgenciaDeViajes\obj\Debug\AgenciaDeViajes.csproj.CopyComplete
+C:\Users\dg260\Desktop\Proyecto .Net\AgenciaDeViajes\obj\Debug\AgenciaDeViajes.exe
+C:\Users\dg260\Desktop\Proyecto .Net\AgenciaDeViajes\obj\Debug\AgenciaDeViajes.pdb
+C:\Users\dg260\Desktop\Proyecto .Net\AgenciaDeViajes\bin\Debug\DatosJSON.dll
+C:\Users\dg260\Desktop\Proyecto .Net\AgenciaDeViajes\bin\Debug\System.Text.Json.dll
+C:\Users\dg260\Desktop\Proyecto .Net\AgenciaDeViajes\bin\Debug\System.Memory.dll
+C:\Users\dg260\Desktop\Proyecto .Net\AgenciaDeViajes\bin\Debug\System.Text.Encodings.Web.dll
+C:\Users\dg260\Desktop\Proyecto .Net\AgenciaDeViajes\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\dg260\Desktop\Proyecto .Net\AgenciaDeViajes\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\dg260\Desktop\Proyecto .Net\AgenciaDeViajes\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\dg260\Desktop\Proyecto .Net\AgenciaDeViajes\bin\Debug\System.Buffers.dll
+C:\Users\dg260\Desktop\Proyecto .Net\AgenciaDeViajes\bin\Debug\DatosJSON.pdb
+C:\Users\dg260\Desktop\Proyecto .Net\AgenciaDeViajes\bin\Debug\DatosJSON.dll.config
+C:\Users\dg260\Desktop\Proyecto .Net\AgenciaDeViajes\bin\Debug\System.Memory.xml
+C:\Users\dg260\Desktop\Proyecto .Net\AgenciaDeViajes\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\dg260\Desktop\Proyecto .Net\AgenciaDeViajes\bin\Debug\System.Buffers.xml
+C:\Users\dg260\Desktop\Proyecto .Net\AgenciaDeViajes\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\dg260\Desktop\Proyecto .Net\AgenciaDeViajes\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml

@@ -50,6 +50,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\DatosJSON\DatosJSON.csproj">
+      <Project>{348a7bfd-8e8b-45a3-a679-0e6248477959}</Project>
+      <Name>DatosJSON</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Modelo\Modelo.csproj">
       <Project>{8fbd4578-e9cb-4858-be88-451f2334e9ec}</Project>
       <Name>Modelo</Name>

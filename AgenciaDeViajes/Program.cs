@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Modelo;
+using DatosJSON;
+using System.Runtime.CompilerServices;
 
 namespace AgenciaDeViajes
 {
@@ -13,12 +15,48 @@ namespace AgenciaDeViajes
 		{
 			ConsoleKeyInfo opcion;
 			int nroCliente;
-			List<Cliente> clientes = new List<Cliente>();
-			List<Paquete> paquetes = new List<Paquete>();
-			Cliente cliente;
-			Paquete paquete;
-			do
-			{
+            #region CLIENTE
+			List<Cliente> lclientes;
+			RepoJSONCliente repoJsonCliente = new RepoJSONCliente("clientes.json");
+			repoJsonCliente.LeerYDeserializar(out lclientes);
+            #endregion
+            #region CLIENTE CORPORATIVO
+			List<ClienteCorporativo> lCliCorporativos;
+			RepoJSONClienteCorporativo repoJsonCliCorporativo = new RepoJSONClienteCorporativo("clientesCorporativos.json");
+			repoJsonCliCorporativo.LeerYDeserializar(out lCliCorporativos);
+            #endregion
+            #region FACTURA
+			List<Factura> lFacturas;
+			RepoJSONFactura repoJsonFactura = new RepoJSONFactura("facturas.json");
+			repoJsonFactura.LeerYDeserializar(out lFacturas);
+			#endregion
+			#region LINEA DE FACTURA
+			List<LineaDeFactura> lLineaFacturas;
+			RepoJSONLineaDeFactura repoJsonLineaFactura = new RepoJSONLineaDeFactura("lineaFacturas.json");
+			repoJsonLineaFactura.LeerYDeserializar(out lLineaFacturas);
+			#endregion
+			#region LUGAR
+			List<Lugar> lLugares;
+			RepoJSONLugar repoJsonLugar = new RepoJSONLugar("lugares.json");
+			repoJsonLugar.LeerYDeserializar(out lLugares);
+            #endregion
+            #region PAQUETE
+            List<Paquete> lPaquetes;
+			RepoJSONPaquete repoJsonPaquete = new RepoJSONPaquete("paquetes.json");
+			repoJsonPaquete.LeerYDeserializar(out lPaquetes);
+			#endregion
+			#region PAQUETE INTERNACIONAL
+			List<PaqueteInternacional> lPaqInter;
+			RepoJSONPaqueteInternacional repoJsonInter = new RepoJSONPaqueteInternacional("paqInter.json");
+			repoJsonInter.LeerYDeserializar(out lPaqInter);
+			#endregion
+			#region PAQUETE NACIONAL
+			List<PaqueteNacional> lPaqNac;
+			RepoJSONPaqueteNacional repoJsonNac = new RepoJSONPaqueteNacional("paqNac.json");
+			repoJsonNac.LeerYDeserializar(out lPaqNac);
+            #endregion
+            do
+            {
 				Console.WriteLine("1 - Nuevo cliente");
 				Console.WriteLine("2 - Listar facturas de un cliente");
 				Console.WriteLine("3 - Inactivar paquete");
@@ -65,7 +103,7 @@ namespace AgenciaDeViajes
 								string provinciaCC = Console.ReadLine();
 								int idClienteCC = Cliente.contadorClientes;
 								ClienteCorporativo cliCC = new ClienteCorporativo(cuit, razonSocial, direccionCC, idClienteCC, nacionalidadCC, provinciaCC, telefonoCC, apellidoCC, nombreCC, dniCC);
-								clientes.Add(cliCC);
+								lclientes.Add(cliCC);
 								try
 								{
 									//RepositorioCliente.agregar(cli);
@@ -94,7 +132,7 @@ namespace AgenciaDeViajes
 								string provincia = Console.ReadLine();
 								int idCliente = Cliente.contadorClientes;
 								Cliente cli = new Cliente(direccion, idCliente, nacionalidad, provincia, telefono, apellido, nombre, dni);
-								clientes.Add(cli);
+								lclientes.Add(cli);
 								try
 								{
 									//RepositorioCliente.agregar(cli);
@@ -180,6 +218,14 @@ namespace AgenciaDeViajes
 						break;
 				}
 			} while ((int)opcion.KeyChar != 27); // 27 es el código ASCII del Escape
+			repoJsonCliente.SerializarYGuardar(lclientes);
+			repoJsonCliCorporativo.SerializarYGuardar(lCliCorporativos);
+			repoJsonFactura.SerializarYGuardar(lFacturas);
+			repoJsonLineaFactura.SerializarYGuardar(lLineaFacturas);
+			repoJsonLugar.SerializarYGuardar(lLugares);
+			repoJsonPaquete.SerializarYGuardar(lPaquetes);
+			repoJsonInter.SerializarYGuardar(lPaqInter);
+			repoJsonNac.SerializarYGuardar(lPaqNac);
 		}
 	}
 }

@@ -4,3 +4,9 @@ D:\Cursos\Curso .NET UTN - FRBA\Trabajo Integrador\dotNet\Modelo\obj\Debug\Model
 D:\Cursos\Curso .NET UTN - FRBA\Trabajo Integrador\dotNet\Modelo\obj\Debug\Modelo.csproj.CoreCompileInputs.cache
 D:\Cursos\Curso .NET UTN - FRBA\Trabajo Integrador\dotNet\Modelo\obj\Debug\Modelo.dll
 D:\Cursos\Curso .NET UTN - FRBA\Trabajo Integrador\dotNet\Modelo\obj\Debug\Modelo.pdb
+C:\Users\dg260\Desktop\Proyecto .Net\Modelo\bin\Debug\Modelo.dll
+C:\Users\dg260\Desktop\Proyecto .Net\Modelo\bin\Debug\Modelo.pdb
+C:\Users\dg260\Desktop\Proyecto .Net\Modelo\obj\Debug\Modelo.csproj.AssemblyReference.cache
+C:\Users\dg260\Desktop\Proyecto .Net\Modelo\obj\Debug\Modelo.csproj.CoreCompileInputs.cache
+C:\Users\dg260\Desktop\Proyecto .Net\Modelo\obj\Debug\Modelo.dll
+C:\Users\dg260\Desktop\Proyecto .Net\Modelo\obj\Debug\Modelo.pdb
