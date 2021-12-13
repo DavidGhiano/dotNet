@@ -15,7 +15,9 @@ namespace AgenciaDeViajes
 		{
 			ConsoleKeyInfo opcion;
 			string dniCliente;
+			string nombrePaquete;
 			Cliente cliente;
+			Paquete paquete;
             #region CLIENTE
 			List<Cliente> lclientes;
 			RepoJSONCliente repoJsonCliente = new RepoJSONCliente("clientes.json");
@@ -28,6 +30,7 @@ namespace AgenciaDeViajes
             #endregion
             #region FACTURA
 			List<Factura> lFacturas;
+			
 			RepoJSONFactura repoJsonFactura = new RepoJSONFactura("facturas.json");
 			repoJsonFactura.LeerYDeserializar(out lFacturas);
 			#endregion
@@ -318,6 +321,9 @@ namespace AgenciaDeViajes
 						pedidosCliente.ForEach(p => p.mostrarDatos());*/
 						break;
 					case '5':
+
+
+						//############## CODIGO PABLO ##############
 						/*Console.Write("\n\nIngrese el número de cliente: ");
 						int.TryParse(Console.ReadLine(), out nroCliente);
 						cliente = clientes.Find(x => x.nroCliente == nroCliente);
