@@ -1,1 +1,1 @@
-[]
+[{"CantidadDia":5,"Estado":true,"FechaViaje":"2021-12-12","IdPaquete":4,"Nombre":"Mexico","Precio":8000.5,"CantidadCuota":6,"ImporteTotal":8000.5,"Lugares":[{"IdLugar":1,"Nombre":"Brasil"}]},{"CantidadDia":3,"Estado":true,"FechaViaje":"2021-12-12","IdPaquete":3,"Nombre":"Argentina","Precio":6500,"CantidadCuota":1,"ImporteTotal":6500,"Lugares":[{"IdLugar":2,"Nombre":"Argentina"}]}]
