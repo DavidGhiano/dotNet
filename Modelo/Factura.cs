@@ -53,5 +53,23 @@ namespace Modelo
 			lineasDeFactura.ForEach(linea => total += linea.Subtotal);
 			importeTotal = total;
 		}
+
+		public override string ToString()
+		{
+			return "Número de factura: " + idFactura +
+				"\nFecha: " + fecha.ToString("dd/MM/yyyy") +
+				"\nLineas De Facutura: \n" + convertirListaEnCadena(lineasDeFactura) +
+				"\n";
+		}
+
+		private string convertirListaEnCadena(List<LineaDeFactura> lineas)
+		{
+			string cadena = "";
+			for(int i = 0; i<lineas.Count; i++)
+			{
+				cadena = cadena + lineas[i].ToString();
+			}
+			return cadena;
+		}
 	}
 }

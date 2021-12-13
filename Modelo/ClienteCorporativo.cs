@@ -44,5 +44,19 @@ namespace Modelo
 
         public string Cuit { get => cuit; set => cuit = value; }
         public string RazonSocial { get => razonSocial; set => razonSocial = value; }
+
+		public override void mostrarDatos()
+		{
+            Console.WriteLine("CUIT: " + cuit);
+            Console.WriteLine("Razón social: " + razonSocial);
+            base.mostrarDatos();
+		}
+
+        public override string ToString()
+        {
+            return "CUIT: " + cuit +
+                "\nRazón social: " + razonSocial +
+                base.ToString();
+        }
     }
 }

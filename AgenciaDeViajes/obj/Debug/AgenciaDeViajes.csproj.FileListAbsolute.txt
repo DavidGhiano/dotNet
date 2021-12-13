@@ -32,3 +32,19 @@ C:\Users\dg260\Desktop\Proyecto .Net\AgenciaDeViajes\bin\Debug\System.Numerics.V
 C:\Users\dg260\Desktop\Proyecto .Net\AgenciaDeViajes\bin\Debug\System.Buffers.xml
 C:\Users\dg260\Desktop\Proyecto .Net\AgenciaDeViajes\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
 C:\Users\dg260\Desktop\Proyecto .Net\AgenciaDeViajes\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\Cursos\Curso .NET UTN - FRBA\Trabajo Integrador\dotNet\AgenciaDeViajes\bin\Debug\DatosJSON.dll
+D:\Cursos\Curso .NET UTN - FRBA\Trabajo Integrador\dotNet\AgenciaDeViajes\bin\Debug\System.Text.Json.dll
+D:\Cursos\Curso .NET UTN - FRBA\Trabajo Integrador\dotNet\AgenciaDeViajes\bin\Debug\System.Memory.dll
+D:\Cursos\Curso .NET UTN - FRBA\Trabajo Integrador\dotNet\AgenciaDeViajes\bin\Debug\System.Text.Encodings.Web.dll
+D:\Cursos\Curso .NET UTN - FRBA\Trabajo Integrador\dotNet\AgenciaDeViajes\bin\Debug\System.Numerics.Vectors.dll
+D:\Cursos\Curso .NET UTN - FRBA\Trabajo Integrador\dotNet\AgenciaDeViajes\bin\Debug\System.Threading.Tasks.Extensions.dll
+D:\Cursos\Curso .NET UTN - FRBA\Trabajo Integrador\dotNet\AgenciaDeViajes\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+D:\Cursos\Curso .NET UTN - FRBA\Trabajo Integrador\dotNet\AgenciaDeViajes\bin\Debug\System.Buffers.dll
+D:\Cursos\Curso .NET UTN - FRBA\Trabajo Integrador\dotNet\AgenciaDeViajes\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\Cursos\Curso .NET UTN - FRBA\Trabajo Integrador\dotNet\AgenciaDeViajes\bin\Debug\DatosJSON.pdb
+D:\Cursos\Curso .NET UTN - FRBA\Trabajo Integrador\dotNet\AgenciaDeViajes\bin\Debug\DatosJSON.dll.config
+D:\Cursos\Curso .NET UTN - FRBA\Trabajo Integrador\dotNet\AgenciaDeViajes\bin\Debug\System.Memory.xml
+D:\Cursos\Curso .NET UTN - FRBA\Trabajo Integrador\dotNet\AgenciaDeViajes\bin\Debug\System.Numerics.Vectors.xml
+D:\Cursos\Curso .NET UTN - FRBA\Trabajo Integrador\dotNet\AgenciaDeViajes\bin\Debug\System.Buffers.xml
+D:\Cursos\Curso .NET UTN - FRBA\Trabajo Integrador\dotNet\AgenciaDeViajes\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\Cursos\Curso .NET UTN - FRBA\Trabajo Integrador\dotNet\AgenciaDeViajes\obj\Debug\AgenciaDeViajes.csproj.CopyComplete

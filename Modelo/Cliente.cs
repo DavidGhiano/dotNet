@@ -66,5 +66,27 @@ namespace Modelo
         public string Apellido { get => apellido; set => apellido = value; }
         public string Nombre { get => nombre; set => nombre = value; }
         public string Dni { get => dni; set => dni = value; }
+
+        public virtual void mostrarDatos()
+        {
+            Console.WriteLine("DNI: " + dni);
+            Console.WriteLine("Apellidos y nombres: " + apellido + ", " + nombre);
+            Console.WriteLine("Dirección: " + direccion);
+            Console.WriteLine("Teléfono: " + telefono);
+            Console.WriteLine("Nacionalidad: " + nacionalidad);
+            Console.WriteLine("Provincia: " + provincia);
+            Console.WriteLine("\n");
+        }
+
+        public override string ToString()
+        {
+            return "DNI: " + dni +
+                "\nApellidos y nombres: " + apellido + ", " + nombre +
+                "\nDirección: " + direccion +
+                "\nTeléfono: " + telefono +
+                "\nNacionalidad: " + nacionalidad +
+                "\nProvincia: " + provincia +
+                "\n";
+        }
     }
 }

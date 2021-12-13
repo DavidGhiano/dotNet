@@ -20,3 +20,25 @@ C:\Users\dg260\Desktop\Proyecto .Net\DatosJSON\obj\Debug\DatosJSON.dll
 C:\Users\dg260\Desktop\Proyecto .Net\DatosJSON\obj\Debug\DatosJSON.pdb
 C:\Users\dg260\Desktop\Proyecto .Net\DatosJSON\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
 C:\Users\dg260\Desktop\Proyecto .Net\DatosJSON\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\Cursos\Curso .NET UTN - FRBA\Trabajo Integrador\dotNet\DatosJSON\bin\Debug\DatosJSON.dll.config
+D:\Cursos\Curso .NET UTN - FRBA\Trabajo Integrador\dotNet\DatosJSON\bin\Debug\DatosJSON.dll
+D:\Cursos\Curso .NET UTN - FRBA\Trabajo Integrador\dotNet\DatosJSON\bin\Debug\DatosJSON.pdb
+D:\Cursos\Curso .NET UTN - FRBA\Trabajo Integrador\dotNet\DatosJSON\bin\Debug\Modelo.dll
+D:\Cursos\Curso .NET UTN - FRBA\Trabajo Integrador\dotNet\DatosJSON\bin\Debug\System.Buffers.dll
+D:\Cursos\Curso .NET UTN - FRBA\Trabajo Integrador\dotNet\DatosJSON\bin\Debug\System.Memory.dll
+D:\Cursos\Curso .NET UTN - FRBA\Trabajo Integrador\dotNet\DatosJSON\bin\Debug\System.Numerics.Vectors.dll
+D:\Cursos\Curso .NET UTN - FRBA\Trabajo Integrador\dotNet\DatosJSON\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\Cursos\Curso .NET UTN - FRBA\Trabajo Integrador\dotNet\DatosJSON\bin\Debug\System.Text.Json.dll
+D:\Cursos\Curso .NET UTN - FRBA\Trabajo Integrador\dotNet\DatosJSON\bin\Debug\System.Text.Encodings.Web.dll
+D:\Cursos\Curso .NET UTN - FRBA\Trabajo Integrador\dotNet\DatosJSON\bin\Debug\System.Threading.Tasks.Extensions.dll
+D:\Cursos\Curso .NET UTN - FRBA\Trabajo Integrador\dotNet\DatosJSON\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+D:\Cursos\Curso .NET UTN - FRBA\Trabajo Integrador\dotNet\DatosJSON\bin\Debug\Modelo.pdb
+D:\Cursos\Curso .NET UTN - FRBA\Trabajo Integrador\dotNet\DatosJSON\bin\Debug\System.Buffers.xml
+D:\Cursos\Curso .NET UTN - FRBA\Trabajo Integrador\dotNet\DatosJSON\bin\Debug\System.Memory.xml
+D:\Cursos\Curso .NET UTN - FRBA\Trabajo Integrador\dotNet\DatosJSON\bin\Debug\System.Numerics.Vectors.xml
+D:\Cursos\Curso .NET UTN - FRBA\Trabajo Integrador\dotNet\DatosJSON\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\Cursos\Curso .NET UTN - FRBA\Trabajo Integrador\dotNet\DatosJSON\obj\Debug\DatosJSON.csproj.AssemblyReference.cache
+D:\Cursos\Curso .NET UTN - FRBA\Trabajo Integrador\dotNet\DatosJSON\obj\Debug\DatosJSON.csproj.CoreCompileInputs.cache
+D:\Cursos\Curso .NET UTN - FRBA\Trabajo Integrador\dotNet\DatosJSON\obj\Debug\DatosJSON.csproj.CopyComplete
+D:\Cursos\Curso .NET UTN - FRBA\Trabajo Integrador\dotNet\DatosJSON\obj\Debug\DatosJSON.dll
+D:\Cursos\Curso .NET UTN - FRBA\Trabajo Integrador\dotNet\DatosJSON\obj\Debug\DatosJSON.pdb
