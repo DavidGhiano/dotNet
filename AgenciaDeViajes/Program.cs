@@ -61,10 +61,10 @@ namespace AgenciaDeViajes
             //lPaqInter = new List<PaqueteInternacional>() { new PaqueteInternacional(100, 1000, true, 10, true, DateTime.Parse("20-01-2021"), Paquete.contadorPaquetes, "Paquete Brasil", 6500, 3, 0, new List<Lugar>() { lLugares[0] })};
             //lPaqNac = new List<PaqueteNacional>() { new PaqueteNacional("Contado", 0.21f, 15, true, DateTime.Parse("20-01-2021"), Paquete.contadorPaquetes, "Paquete Argentina", 3500, 1,0, new List<Lugar>() { lLugares[1] }) };
 
-            LineaDeFactura lf1 = new LineaDeFactura(Factura.contadorFacturas, LineaDeFactura.contadorLineasFactura, 1, 0, lPaqInter[0]);
+           /* LineaDeFactura lf1 = new LineaDeFactura(Factura.contadorFacturas, LineaDeFactura.contadorLineasFactura, 1, 0, lPaqInter[0]);
             Factura f1 = new Factura(DateTime.Now, Factura.contadorFacturas, 0, null, new List<LineaDeFactura>() { lf1 });
             LineaDeFactura lf2 = new LineaDeFactura(Factura.contadorFacturas, LineaDeFactura.contadorLineasFactura, 1, 0, lPaqNac[0]);
-            Factura f2 = new Factura(DateTime.Now, Factura.contadorFacturas, 0, null, new List<LineaDeFactura>() { lf2 });
+            Factura f2 = new Factura(DateTime.Now, Factura.contadorFacturas, 0, null, new List<LineaDeFactura>() { lf2 });*/
 
             //lLineaFacturas.Add(lf1);
             //lLineaFacturas.Add(lf2);
@@ -216,6 +216,46 @@ namespace AgenciaDeViajes
 						}
 						break;
 					case '3':
+
+						/*
+						Console.Write("\n\nIngrese el nombre del paquete: ");
+						nombrePaquete = Console.ReadLine();
+						paquete = lPaquetes.Find(x => x.Nombre == nombrePaquete);
+
+						if (paquete != null)
+						{
+							Console.WriteLine(paquete.ToString());
+
+							Console.Write("\n\n¿Desea inactivar el paquete?");
+							Console.WriteLine("s/S: Sí");
+							Console.WriteLine("n/N: No");
+							ConsoleKeyInfo confirma;
+							do
+							{
+								confirma = Console.ReadKey(true);
+							} while ((confirma.KeyChar != 's') && (confirma.KeyChar != 'S')
+							&& (confirma.KeyChar != 'n') && (confirma.KeyChar != 'N'));
+							if (confirma.KeyChar == 's' || confirma.KeyChar == 'S')
+							{
+								paquete.Estado = false;
+								Console.WriteLine("Paquete inactivado existosamente.");
+							}
+                            else
+                            {
+								Console.WriteLine("Error al inactivar paquete.");
+                            }
+						}
+						else
+						{
+							Console.WriteLine("\nPaquete no encontrado.");
+							Console.WriteLine("\n");
+						}
+						*/
+
+
+
+						//############## CODIGO PABLO ##############
+
 						/*Console.Write("\n\nIngrese el número de cliente: ");
 						int.TryParse(Console.ReadLine(), out nroCliente);
 						cliente = clientes.Find(x => x.nroCliente == nroCliente);
@@ -230,6 +270,48 @@ namespace AgenciaDeViajes
 						}*/
 						break;
 					case '4':
+
+						/*Console.Write("\n\nIngrese el nombre del paquete: ");
+						nombrePaquete = Console.ReadLine();
+						paquete = lPaquetes.Find(x => x.Nombre == nombrePaquete);
+
+						if (paquete != null)
+						{
+							Console.WriteLine($"Precio del paquete seleccionado:{paquete.Precio.ToString()}");
+
+							Console.Write("\n\nIngrese el nuevo precio: ");
+							float nuevoPrecioPaquete = float.Parse(Console.ReadLine());
+
+							Console.Write("\n\n¿Desea actualizar el precio del paquete?");
+							Console.WriteLine("s/S: Sí");
+							Console.WriteLine("n/N: No");
+							ConsoleKeyInfo confirma;
+							do
+							{
+								confirma = Console.ReadKey(true);
+							} while ((confirma.KeyChar != 's') && (confirma.KeyChar != 'S')
+							&& (confirma.KeyChar != 'n') && (confirma.KeyChar != 'N'));
+							if (confirma.KeyChar == 's' || confirma.KeyChar == 'S')
+							{
+								paquete.Precio = nuevoPrecioPaquete;
+								Console.WriteLine("Precio actualizado existosamente.");
+							}
+                            else
+                            {
+								Console.WriteLine("Error al actualizar precio.");
+                            }
+														
+						}
+						else
+						{
+							Console.WriteLine("\nPaquete no encontrado.");
+							Console.WriteLine("\n");
+						}*/
+
+
+
+						//############## CODIGO PABLO ##############
+
 						/*Console.Write("\n\nIngrese el número de cliente: ");
 						int.TryParse(Console.ReadLine(), out nroCliente);
 						List<Pedido> pedidosCliente = pedidos.FindAll(p => p.cliente.nroCliente == nroCliente);
