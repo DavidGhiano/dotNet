@@ -11,7 +11,7 @@ namespace Modelo
 		private DateTime fecha;
 		private int idFactura;
 		private float importeTotal;
-		private Cliente cliente;
+		private int idCliente;
 		private List<LineaDeFactura> lineasDeFactura;
 
 		public static int contadorFacturas = 0;
@@ -26,17 +26,17 @@ namespace Modelo
 			this.fecha = DateTime.Today;
 			this.idFactura = 0;
 			this.importeTotal = 0.0f;
-			this.Cliente = null;
+			this.idCliente = 0;
 			this.lineasDeFactura = null;
 			contadorFacturas++;
 		}
 
-		public Factura(DateTime fecha, int idFactura, float importeTotal, Cliente cliente, List<LineaDeFactura> lineasDeFactura)
+		public Factura(DateTime fecha, int idFactura, float importeTotal, int idCliente, List<LineaDeFactura> lineasDeFactura)
 		{
 			this.fecha = fecha;
 			this.idFactura = idFactura;
 			this.importeTotal = importeTotal;
-			this.Cliente = cliente;
+			this.idCliente = idCliente;
 			this.lineasDeFactura = lineasDeFactura;
 			contadorFacturas++;
 		}
@@ -44,7 +44,7 @@ namespace Modelo
 		public DateTime Fecha { get => fecha; set => fecha = value; }
 		public int IdFactura { get => idFactura; set => idFactura = value; }
 		public float ImporteTotal { get => importeTotal; set => importeTotal = value; }
-		public Cliente Cliente { get => cliente; set => cliente = value; }
+		public int IdCliente { get => idCliente; set => idCliente = value; }
 		public List<LineaDeFactura> LineasDeFactura { get => lineasDeFactura; set => lineasDeFactura = value; }
 
 		public void calcularImporte()
@@ -58,18 +58,7 @@ namespace Modelo
 		{
 			return "Número de factura: " + idFactura +
 				"\nFecha: " + fecha.ToString("dd/MM/yyyy") +
-				"\nLineas De Facutura: \n" + convertirListaEnCadena(lineasDeFactura) +
 				"\n";
-		}
-
-		private string convertirListaEnCadena(List<LineaDeFactura> lineas)
-		{
-			string cadena = "";
-			for(int i = 0; i<lineas.Count; i++)
-			{
-				cadena = cadena + lineas[i].ToString();
-			}
-			return cadena;
 		}
 	}
 }

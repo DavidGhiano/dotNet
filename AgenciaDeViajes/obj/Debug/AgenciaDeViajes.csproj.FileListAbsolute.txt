@@ -47,4 +47,3 @@ D:\Cursos\Curso .NET UTN - FRBA\Trabajo Integrador\dotNet\AgenciaDeViajes\bin\De
 D:\Cursos\Curso .NET UTN - FRBA\Trabajo Integrador\dotNet\AgenciaDeViajes\bin\Debug\System.Numerics.Vectors.xml
 D:\Cursos\Curso .NET UTN - FRBA\Trabajo Integrador\dotNet\AgenciaDeViajes\bin\Debug\System.Buffers.xml
 D:\Cursos\Curso .NET UTN - FRBA\Trabajo Integrador\dotNet\AgenciaDeViajes\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
-D:\Cursos\Curso .NET UTN - FRBA\Trabajo Integrador\dotNet\AgenciaDeViajes\obj\Debug\AgenciaDeViajes.csproj.CopyComplete

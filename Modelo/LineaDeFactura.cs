@@ -12,7 +12,7 @@ namespace Modelo
 		private int idLineaDeFactura;
 		private int cantidad;
 		private float subtotal;
-		private Paquete paquete;
+		private int idPaquete;
 
 		public static int contadorLineasFactura = 0;
 
@@ -27,27 +27,17 @@ namespace Modelo
 			this.idLineaDeFactura = 0;
 			this.cantidad = 0;
 			this.subtotal = 0.0f;
-			this.paquete = null;
+			this.idPaquete = 0;
 			contadorLineasFactura++;
 		}
 
-		public LineaDeFactura(int idFactura, int idLineaDeFactura, int cantidad, float subtotal, PaqueteNacional paquete)
+		public LineaDeFactura(int idFactura, int idLineaDeFactura, int cantidad, float subtotal, int idPaquete)
 		{
 			this.idFactura = idFactura;
 			this.idLineaDeFactura = idLineaDeFactura;
 			this.cantidad = cantidad;
 			this.subtotal = subtotal;
-			this.paquete = paquete;
-			contadorLineasFactura++;
-		}
-
-		public LineaDeFactura(int idFactura, int idLineaDeFactura, int cantidad, float subtotal, PaqueteInternacional paquete)
-		{
-			this.idFactura = idFactura;
-			this.idLineaDeFactura = idLineaDeFactura;
-			this.cantidad = cantidad;
-			this.subtotal = subtotal;
-			this.paquete = paquete;
+			this.idPaquete = idPaquete;
 			contadorLineasFactura++;
 		}
 
@@ -55,17 +45,16 @@ namespace Modelo
 		public int IdLineaDeFactura { get => idLineaDeFactura; set => idLineaDeFactura = value; }
 		public float Subtotal { get => subtotal; set => subtotal = value; }
 		public int Cantidad { get => cantidad; set => cantidad = value; }
-		public Paquete Paquete { get => paquete; set => paquete = value; }
+		public int IdPaquete { get => idPaquete; set => idPaquete = value; }
 
-		public void calcularSubtotal()
+		public void calcularSubtotal(Paquete paquete)
 		{
 			subtotal = cantidad * paquete.ImporteTotal;
 		}
 
 		public override string ToString()
 		{
-			return "Paquete: " + Paquete.Nombre +
-				"\nCantidad: " + cantidad +
+			return "Cantidad: " + cantidad +
 				"\nSubtotal: " + subtotal +
 				"\n";
 		}

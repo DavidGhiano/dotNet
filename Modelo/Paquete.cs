@@ -72,6 +72,23 @@ namespace Modelo
         public List<Lugar> Lugares { get => lugares; set => lugares = value; }
 
         public abstract void CalcularImporte();
-        
+
+        public override string ToString()
+        {
+            string cadenaLugares = "";
+            foreach(Lugar l in lugares){
+                cadenaLugares = cadenaLugares + l.Nombre + "\n";
+			}
+            return "ID Paquete: " + idPaquete.ToString() +
+                "\nNombre: " + nombre +
+                "\nCantidad de días: " + cantidadDia.ToString() +
+                "\nFecha de viaje: " + fechaViaje.ToString("dd/MM/yyyy") +
+                "\nPrecio: " + precio.ToString() +
+                "\nCantidad de cuotas: " + cantidadCuota.ToString() +
+                "\nImporte total: " + importeTotal.ToString() +
+                "\nEstado: " + estado.ToString() +
+                "\nLugares: " + cadenaLugares;
+        }
+
     }
 }

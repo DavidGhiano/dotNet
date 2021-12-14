@@ -56,5 +56,14 @@ namespace Modelo
         {
             importeTotal = precio + importePorImpuestos;
         }
+
+        public override string ToString()
+        {
+            return base.ToString() + 
+                "Cotización del dolar: " + cotizacionDolar.ToString() +
+                "\nImporte por impuestos: " + importePorImpuestos.ToString() +
+                "\nRequiere Visa: " + requiereVisa.ToString() +
+                "\n";
+        }
     }
 }

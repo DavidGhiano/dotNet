@@ -49,5 +49,13 @@ namespace Modelo
         {
             importeTotal = precio * porcentajePorImpuestos;
         }
+
+        public override string ToString()
+        {
+            return base.ToString() + 
+                "Modo de pago: " + modoDePago +
+                "\nPorcentaje por impuestos: " + porcentajePorImpuestos.ToString() +
+                "\n";
+        }
     }
 }

@@ -58,56 +58,56 @@ namespace AgenciaDeViajes
 			List<PaqueteNacional> lPaqNac;
 			RepoJSONPaqueteNacional repoJsonNac = new RepoJSONPaqueteNacional("paqNac.json");
 			repoJsonNac.LeerYDeserializar(out lPaqNac);
-            #endregion
+			#endregion
 
-            //lLugares = new List<Lugar>() { new Lugar(Lugar.contadorLugares,"Brasil"), new Lugar(Lugar.contadorLugares,"Argentina")};
-            //lPaqInter = new List<PaqueteInternacional>() { new PaqueteInternacional(100, 1000, true, 10, true, DateTime.Parse("20-01-2021"), Paquete.contadorPaquetes, "Paquete Brasil", 6500, 3, 0, new List<Lugar>() { lLugares[0] })};
-            //lPaqNac = new List<PaqueteNacional>() { new PaqueteNacional("Contado", 0.21f, 15, true, DateTime.Parse("20-01-2021"), Paquete.contadorPaquetes, "Paquete Argentina", 3500, 1,0, new List<Lugar>() { lLugares[1] }) };
+			//lLugares = new List<Lugar>() { new Lugar(Lugar.contadorLugares, "Brasil"), new Lugar(Lugar.contadorLugares, "Argentina") };
+			//lPaqInter = new List<PaqueteInternacional>() { new PaqueteInternacional(100, 1000, true, 10, true, DateTime.Parse("20-01-2021"), Paquete.contadorPaquetes, "Paquete Brasil", 6500, 3, 0, new List<Lugar>() { lLugares[0] }) };
+			//lPaqNac = new List<PaqueteNacional>() { new PaqueteNacional("Contado", 0.21f, 15, true, DateTime.Parse("20-01-2021"), Paquete.contadorPaquetes, "Paquete Argentina", 3500, 1, 0, new List<Lugar>() { lLugares[1] }) };
 
-           /* LineaDeFactura lf1 = new LineaDeFactura(Factura.contadorFacturas, LineaDeFactura.contadorLineasFactura, 1, 0, lPaqInter[0]);
-            Factura f1 = new Factura(DateTime.Now, Factura.contadorFacturas, 0, null, new List<LineaDeFactura>() { lf1 });
-            LineaDeFactura lf2 = new LineaDeFactura(Factura.contadorFacturas, LineaDeFactura.contadorLineasFactura, 1, 0, lPaqNac[0]);
-            Factura f2 = new Factura(DateTime.Now, Factura.contadorFacturas, 0, null, new List<LineaDeFactura>() { lf2 });*/
+			//LineaDeFactura lf1 = new LineaDeFactura(Factura.contadorFacturas, LineaDeFactura.contadorLineasFactura, 1, 0, lPaqInter[0].IdPaquete);
+			//Factura f1 = new Factura(DateTime.Now, Factura.contadorFacturas, 0, 1, new List<LineaDeFactura>() { lf1 });
+			//LineaDeFactura lf2 = new LineaDeFactura(Factura.contadorFacturas, LineaDeFactura.contadorLineasFactura, 1, 0, lPaqNac[0].IdPaquete);
+			//Factura f2 = new Factura(DateTime.Now, Factura.contadorFacturas, 0, 1, new List<LineaDeFactura>() { lf2 });
 
-            //lLineaFacturas.Add(lf1);
-            //lLineaFacturas.Add(lf2);
-            //lFacturas.Add(f1);
-            //lFacturas.Add(f2);
+			//lLineaFacturas.Add(lf1);
+			//lLineaFacturas.Add(lf2);
+			//lFacturas.Add(f1);
+			//lFacturas.Add(f2);
 
-            //lFacturas[0].Cliente = lclientes[0];
-            //lFacturas[1].Cliente = lclientes[0];
+			//lFacturas[0].Cliente = lclientes[0];
+			//lFacturas[1].Cliente = lclientes[0];
 
-            //lLineaFacturas[0].Paquete = lPaqInter[0];
-            //lLineaFacturas[1].Paquete = lPaqNac[0];
+			//lLineaFacturas[0].Paquete = lPaqInter[0];
+			//lLineaFacturas[1].Paquete = lPaqNac[0];
 
-            //Paquete paqueteNa = new PaqueteNacional(
-            //	"contado",
-            //	0.21f,
-            //	3,
-            //	true,
-            //	DateTime.Now,
-            //	Paquete.contadorPaquetes,
-            //	"Argentina",
-            //	6500.0f,
-            //	1,
-            //	6500.0f,
-            //	new List<Lugar>() { lLugares[1] });
-            //Paquete paqueteIn = new PaqueteInternacional(
-            //	107.5f,
-            //	0.21f,
-            //	false,
-            //	5,
-            //	true,
-            //	DateTime.Now,
-            //	Paquete.contadorPaquetes,
-            //	"Mexico",
-            //	8000.5f,
-            //	6,
-            //	8000.5f,
-            //	new List<Lugar>(){lLugares[0]});
-            //lPaquetes.Add(paqueteIn);
-            //lPaquetes.Add(paqueteNa);
-            do
+			//Paquete paqueteNa = new PaqueteNacional(
+			//	"contado",
+			//	0.21f,
+			//	3,
+			//	true,
+			//	DateTime.Now,
+			//	Paquete.contadorPaquetes,
+			//	"Argentina",
+			//	6500.0f,
+			//	1,
+			//	6500.0f,
+			//	new List<Lugar>() { lLugares[1] });
+			//Paquete paqueteIn = new PaqueteInternacional(
+			//	107.5f,
+			//	0.21f,
+			//	false,
+			//	5,
+			//	true,
+			//	DateTime.Now,
+			//	Paquete.contadorPaquetes,
+			//	"Mexico",
+			//	8000.5f,
+			//	6,
+			//	8000.5f,
+			//	new List<Lugar>(){lLugares[0]});
+			//lPaquetes.Add(paqueteIn);
+			//lPaquetes.Add(paqueteNa);
+			do
             {
 				Console.WriteLine("1 - Nuevo cliente");
 				Console.WriteLine("2 - Listar facturas de un cliente");
@@ -164,7 +164,7 @@ namespace AgenciaDeViajes
 								{
 									Console.WriteLine("UPS" + ex.Message);
 								}
-								Console.WriteLine("\n");
+								Console.Write("\n");
 								break;
 							case '2':
 								try
@@ -205,78 +205,89 @@ namespace AgenciaDeViajes
 						if (cliente != null)
 						{
 							Console.WriteLine(cliente.ToString());
-							List<Factura> facturasCli = lFacturas.FindAll(x => x.Cliente.Dni == cliente.Dni);
-							for(int i = 0; i<facturasCli.Count; i++)
+							List<Factura> facturasCli = lFacturas.FindAll(x => x.IdCliente == cliente.IdCliente);
+							foreach(Factura f in facturasCli)
 							{
-								facturasCli[i].ToString();
+								Console.WriteLine(f.ToString());
+								Paquete paquete1 = null;
+								foreach(LineaDeFactura lf in f.LineasDeFactura)
+								{
+									paquete1 = lPaqInter.Find(x => x.IdPaquete == lf.IdPaquete);
+									if (paquete1 == null)
+									{
+										paquete1 = lPaqNac.Find(x => x.IdPaquete == lf.IdPaquete);
+									}
+
+									Console.WriteLine(lf.ToString());
+									Console.WriteLine(paquete1.ToString());
+								}
 							}
-							Console.WriteLine("\n");
+							Console.Write("\n");
 						}
 						else
 						{
 							Console.WriteLine("\nCliente no encontrado. Crear primero el cliente");
-							Console.WriteLine("\n");
+							Console.Write("\n");
 						}
 						break;
 					case '3':
 
-						/*
 						Console.Write("\n\nIngrese el nombre del paquete: ");
 						nombrePaquete = Console.ReadLine();
-						paquete = lPaquetes.Find(x => x.Nombre == nombrePaquete);
+						
+						paquete = lPaqInter.Find((x => x.Nombre == nombrePaquete));
+						if (paquete == null)
+						{
+							paquete = lPaqNac.Find((x => x.Nombre == nombrePaquete));
+						}
 
 						if (paquete != null)
 						{
 							Console.WriteLine(paquete.ToString());
 
-							Console.Write("\n\n¿Desea inactivar el paquete?");
-							Console.WriteLine("s/S: Sí");
-							Console.WriteLine("n/N: No");
-							ConsoleKeyInfo confirma;
-							do
+							if (paquete.Estado)
 							{
-								confirma = Console.ReadKey(true);
-							} while ((confirma.KeyChar != 's') && (confirma.KeyChar != 'S')
-							&& (confirma.KeyChar != 'n') && (confirma.KeyChar != 'N'));
-							if (confirma.KeyChar == 's' || confirma.KeyChar == 'S')
-							{
-								paquete.Estado = false;
-								Console.WriteLine("Paquete inactivado existosamente.");
+								Console.Write("\n\n¿Desea inactivar el paquete?");
+								Console.WriteLine("s/S: Sí");
+								Console.WriteLine("n/N: No");
+								ConsoleKeyInfo confirma;
+								do
+								{
+									confirma = Console.ReadKey(true);
+								} while ((confirma.KeyChar != 's') && (confirma.KeyChar != 'S')
+								&& (confirma.KeyChar != 'n') && (confirma.KeyChar != 'N'));
+								if (confirma.KeyChar == 's' || confirma.KeyChar == 'S')
+								{
+									paquete.Estado = false;
+									Console.WriteLine("\nPaquete inactivado existosamente.\n");
+								}
+								else
+								{
+									Console.WriteLine("\nError al inactivar paquete.\n");
+								}
 							}
-                            else
-                            {
-								Console.WriteLine("Error al inactivar paquete.");
-                            }
+							else
+							{
+								Console.WriteLine("\nEl paquete ya se encuentra inactivado.");
+								Console.Write("\n");
+							}
 						}
 						else
 						{
 							Console.WriteLine("\nPaquete no encontrado.");
-							Console.WriteLine("\n");
+							Console.Write("\n");
 						}
-						*/
-
-
-
-						//############## CODIGO PABLO ##############
-
-						/*Console.Write("\n\nIngrese el número de cliente: ");
-						int.TryParse(Console.ReadLine(), out nroCliente);
-						cliente = clientes.Find(x => x.nroCliente == nroCliente);
-						if (cliente != null)
-						{
-							cliente.mostrarDatos();
-						}
-						else
-						{
-							Console.WriteLine("\nCliente no encontrado.");
-							Console.WriteLine("\n");
-						}*/
 						break;
 					case '4':
 
-						/*Console.Write("\n\nIngrese el nombre del paquete: ");
+						Console.Write("\n\nIngrese el nombre del paquete: ");
 						nombrePaquete = Console.ReadLine();
-						paquete = lPaquetes.Find(x => x.Nombre == nombrePaquete);
+
+						paquete = lPaqInter.Find((x => x.Nombre == nombrePaquete));
+						if (paquete == null)
+						{
+							paquete = lPaqNac.Find((x => x.Nombre == nombrePaquete));
+						}
 
 						if (paquete != null)
 						{
@@ -297,56 +308,40 @@ namespace AgenciaDeViajes
 							if (confirma.KeyChar == 's' || confirma.KeyChar == 'S')
 							{
 								paquete.Precio = nuevoPrecioPaquete;
-								Console.WriteLine("Precio actualizado existosamente.");
+								Console.WriteLine("\nPrecio actualizado existosamente.\n");
 							}
                             else
                             {
-								Console.WriteLine("Error al actualizar precio.");
+								Console.WriteLine("\nError al actualizar precio.\n");
                             }
 														
 						}
 						else
 						{
 							Console.WriteLine("\nPaquete no encontrado.");
-							Console.WriteLine("\n");
-						}*/
-
-
-
-						//############## CODIGO PABLO ##############
-
-						/*Console.Write("\n\nIngrese el número de cliente: ");
-						int.TryParse(Console.ReadLine(), out nroCliente);
-						List<Pedido> pedidosCliente = pedidos.FindAll(p => p.cliente.nroCliente == nroCliente);
-						pedidosCliente.ForEach(p => p.mostrarDatos());*/
+							Console.Write("\n");
+						}
 						break;
 					case '5':
-
-
-						//############## CODIGO PABLO ##############
-						/*Console.Write("\n\nIngrese el número de cliente: ");
-						int.TryParse(Console.ReadLine(), out nroCliente);
-						cliente = clientes.Find(x => x.nroCliente == nroCliente);
-						if (cliente != null)
+						Console.WriteLine("\nClientes con más de dos compras:");
+						Console.Write("\n");
+						foreach (Cliente cli in lclientes)
 						{
-							cliente.mostrarDatos();
-							Console.Write("\nAtención, se eliminará el cliente ingresado. ¿Confirma esta acción? S/s (Si) N/n (No): ");
-							ConsoleKeyInfo confirma;
-							do
+							if (lFacturas.FindAll(x => x.IdCliente == cli.IdCliente).Count >= 2)
 							{
-								confirma = Console.ReadKey();
-							} while ((confirma.KeyChar != 'S') && (confirma.KeyChar != 's') && (confirma.KeyChar != 'N') && (confirma.KeyChar != 'n'));
-							if (confirma.KeyChar == 'S' || confirma.KeyChar == 's')
-							{
-								clientes.Remove(cliente);
-								Console.Write("\nCliente eliminado exitosamente");
+								Console.WriteLine(" - " + cli.Nombre + " " + cli.Apellido);
 								Console.Write("\n");
 							}
 						}
-						else
+
+						foreach (ClienteCorporativo cliCorp in lCliCorporativos)
 						{
-							Console.WriteLine("\nCliente no encontrado.");
-						}*/
+							if (lFacturas.FindAll(x => x.IdCliente == cliCorp.IdCliente).Count >= 2)
+							{
+								Console.WriteLine(" - " + cliCorp.RazonSocial);
+								Console.Write("\n");
+							}
+						}
 						break;
 					default:
 						break;
