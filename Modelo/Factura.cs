@@ -31,13 +31,13 @@ namespace Modelo
 			contadorFacturas++;
 		}
 
-		public Factura(DateTime fecha, int idFactura, float importeTotal, int idCliente, List<LineaDeFactura> lineasDeFactura)
+		public Factura(DateTime fecha, int idFactura, int idCliente, List<LineaDeFactura> lineasDeFactura)
 		{
 			this.fecha = fecha;
 			this.idFactura = idFactura;
-			this.importeTotal = importeTotal;
 			this.idCliente = idCliente;
 			this.lineasDeFactura = lineasDeFactura;
+			this.importeTotal = calcularImporte();
 			contadorFacturas++;
 		}
 
@@ -47,11 +47,11 @@ namespace Modelo
 		public int IdCliente { get => idCliente; set => idCliente = value; }
 		public List<LineaDeFactura> LineasDeFactura { get => lineasDeFactura; set => lineasDeFactura = value; }
 
-		public void calcularImporte()
+		public float calcularImporte()
 		{
 			float total = 0;
 			lineasDeFactura.ForEach(linea => total += linea.Subtotal);
-			importeTotal = total;
+			return importeTotal = total;
 		}
 
 		public override string ToString()

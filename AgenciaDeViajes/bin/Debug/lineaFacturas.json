@@ -1,1 +1,1 @@
-[{"IdFactura":1,"IdLineaDeFactura":1,"Subtotal":0,"Cantidad":1,"IdPaquete":1},{"IdFactura":2,"IdLineaDeFactura":2,"Subtotal":0,"Cantidad":1,"IdPaquete":2}]
+[{"IdFactura":1,"IdLineaDeFactura":1,"Subtotal":7500,"Cantidad":1,"IdPaquete":1,"Unitario":7500},{"IdFactura":2,"IdLineaDeFactura":2,"Subtotal":4235,"Cantidad":1,"IdPaquete":2,"Unitario":4235}]

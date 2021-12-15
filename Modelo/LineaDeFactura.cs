@@ -11,6 +11,7 @@ namespace Modelo
 		private int idFactura;
 		private int idLineaDeFactura;
 		private int cantidad;
+		private float unitario;
 		private float subtotal;
 		private int idPaquete;
 
@@ -26,17 +27,19 @@ namespace Modelo
 			this.idFactura = 0;
 			this.idLineaDeFactura = 0;
 			this.cantidad = 0;
+			this.unitario = 0.0f;
 			this.subtotal = 0.0f;
 			this.idPaquete = 0;
 			contadorLineasFactura++;
 		}
 
-		public LineaDeFactura(int idFactura, int idLineaDeFactura, int cantidad, float subtotal, int idPaquete)
+		public LineaDeFactura(int idFactura, int idLineaDeFactura, int cantidad, float unitario, int idPaquete)
 		{
 			this.idFactura = idFactura;
 			this.idLineaDeFactura = idLineaDeFactura;
 			this.cantidad = cantidad;
-			this.subtotal = subtotal;
+			this.unitario = unitario;
+			this.subtotal = calcularSubtotal();
 			this.idPaquete = idPaquete;
 			contadorLineasFactura++;
 		}
@@ -46,16 +49,17 @@ namespace Modelo
 		public float Subtotal { get => subtotal; set => subtotal = value; }
 		public int Cantidad { get => cantidad; set => cantidad = value; }
 		public int IdPaquete { get => idPaquete; set => idPaquete = value; }
+        public float Unitario { get => unitario; set => unitario = value; }
 
-		public void calcularSubtotal(Paquete paquete)
+        public float calcularSubtotal()
 		{
-			subtotal = cantidad * paquete.ImporteTotal;
+			return cantidad * unitario;
 		}
 
 		public override string ToString()
 		{
 			return "Cantidad: " + cantidad +
-				"\nSubtotal: " + subtotal +
+				"\nSubtotal: " + calcularSubtotal().ToString() +
 				"\n";
 		}
 	}

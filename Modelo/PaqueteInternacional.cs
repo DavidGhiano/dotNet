@@ -30,7 +30,6 @@ namespace Modelo
             string nombre,
             float precio,
             int cantidadCuota,
-            float importeTotal,
             List<Lugar> lugares)
             : base(
                   cantidadDia,
@@ -39,13 +38,13 @@ namespace Modelo
                   idPaquete,
                   nombre, 
                   precio, 
-                  cantidadCuota, 
-                  importeTotal, 
+                  cantidadCuota,
                   lugares)
         {
             this.CotizacionDolar = cotizacionDolar;
             this.ImportePorImpuestos = importePorImpuestos;
             this.RequiereVisa = requiereVisa;
+            CalcularImporte();
         }
 
         public float CotizacionDolar { get => cotizacionDolar; set => cotizacionDolar = value; }
@@ -54,7 +53,7 @@ namespace Modelo
 
         public override void CalcularImporte()
         {
-            importeTotal = precio + importePorImpuestos;
+            this.importeTotal = precio + importePorImpuestos;
         }
 
         public override string ToString()

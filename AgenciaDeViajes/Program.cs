@@ -58,56 +58,68 @@ namespace AgenciaDeViajes
 			List<PaqueteNacional> lPaqNac;
 			RepoJSONPaqueteNacional repoJsonNac = new RepoJSONPaqueteNacional("paqNac.json");
 			repoJsonNac.LeerYDeserializar(out lPaqNac);
-			#endregion
+            #endregion
 
-			//lLugares = new List<Lugar>() { new Lugar(Lugar.contadorLugares, "Brasil"), new Lugar(Lugar.contadorLugares, "Argentina") };
-			//lPaqInter = new List<PaqueteInternacional>() { new PaqueteInternacional(100, 1000, true, 10, true, DateTime.Parse("20-01-2021"), Paquete.contadorPaquetes, "Paquete Brasil", 6500, 3, 0, new List<Lugar>() { lLugares[0] }) };
-			//lPaqNac = new List<PaqueteNacional>() { new PaqueteNacional("Contado", 0.21f, 15, true, DateTime.Parse("20-01-2021"), Paquete.contadorPaquetes, "Paquete Argentina", 3500, 1, 0, new List<Lugar>() { lLugares[1] }) };
+            //lLugares = new List<Lugar>() { new Lugar(Lugar.contadorLugares, "Brasil"), new Lugar(Lugar.contadorLugares, "Argentina") };
+            //lPaqInter = new List<PaqueteInternacional>() { new PaqueteInternacional(100, 1000, true, 10, true, DateTime.Parse("20-01-2021"), Paquete.contadorPaquetes, "Paquete Brasil", 6500, 3, new List<Lugar>() { lLugares[0] }) };
+            //lPaqNac = new List<PaqueteNacional>() { new PaqueteNacional("Contado", 0.21f, 15, true, DateTime.Parse("20-01-2021"), Paquete.contadorPaquetes, "Paquete Argentina", 3500, 1, new List<Lugar>() { lLugares[1] }) };
 
-			//LineaDeFactura lf1 = new LineaDeFactura(Factura.contadorFacturas, LineaDeFactura.contadorLineasFactura, 1, 0, lPaqInter[0].IdPaquete);
-			//Factura f1 = new Factura(DateTime.Now, Factura.contadorFacturas, 0, 1, new List<LineaDeFactura>() { lf1 });
-			//LineaDeFactura lf2 = new LineaDeFactura(Factura.contadorFacturas, LineaDeFactura.contadorLineasFactura, 1, 0, lPaqNac[0].IdPaquete);
-			//Factura f2 = new Factura(DateTime.Now, Factura.contadorFacturas, 0, 1, new List<LineaDeFactura>() { lf2 });
+
+			//LineaDeFactura lf1 = new LineaDeFactura(
+			//Factura.contadorFacturas,
+			//LineaDeFactura.contadorLineasFactura,
+			//1,
+			//lPaqInter[0].ImporteTotal,
+			//lPaqInter[0].IdPaquete);
+			//Factura f1 = new Factura(DateTime.Now, Factura.contadorFacturas, 1, new List<LineaDeFactura>() { lf1 });
+
+			//LineaDeFactura lf2 = new LineaDeFactura(
+			//Factura.contadorFacturas,
+			//LineaDeFactura.contadorLineasFactura,
+			//1,
+			//lPaqNac[0].ImporteTotal,
+			//lPaqNac[0].IdPaquete);
+			//Factura f2 = new Factura(DateTime.Now, Factura.contadorFacturas, 1, new List<LineaDeFactura>() { lf2 });
 
 			//lLineaFacturas.Add(lf1);
 			//lLineaFacturas.Add(lf2);
 			//lFacturas.Add(f1);
 			//lFacturas.Add(f2);
 
-			//lFacturas[0].Cliente = lclientes[0];
-			//lFacturas[1].Cliente = lclientes[0];
+            //lFacturas[0].Cliente = lclientes[0];
+            //lFacturas[1].Cliente = lclientes[0];
 
-			//lLineaFacturas[0].Paquete = lPaqInter[0];
-			//lLineaFacturas[1].Paquete = lPaqNac[0];
+            //lLineaFacturas[0].Paquete = lPaqInter[0];
+            //lLineaFacturas[1].Paquete = lPaqNac[0];
 
-			//Paquete paqueteNa = new PaqueteNacional(
-			//	"contado",
-			//	0.21f,
-			//	3,
-			//	true,
-			//	DateTime.Now,
-			//	Paquete.contadorPaquetes,
-			//	"Argentina",
-			//	6500.0f,
-			//	1,
-			//	6500.0f,
-			//	new List<Lugar>() { lLugares[1] });
-			//Paquete paqueteIn = new PaqueteInternacional(
-			//	107.5f,
-			//	0.21f,
-			//	false,
-			//	5,
-			//	true,
-			//	DateTime.Now,
-			//	Paquete.contadorPaquetes,
-			//	"Mexico",
-			//	8000.5f,
-			//	6,
-			//	8000.5f,
-			//	new List<Lugar>(){lLugares[0]});
-			//lPaquetes.Add(paqueteIn);
-			//lPaquetes.Add(paqueteNa);
-			do
+            //Paquete paqueteNa = new PaqueteNacional(
+            //	"contado",
+            //	0.21f,
+            //	3,
+            //	true,
+            //	DateTime.Now,
+            //	Paquete.contadorPaquetes,
+            //	"Argentina",
+            //	6500.0f,
+            //	1,
+            //	6500.0f,
+            //	new List<Lugar>() { lLugares[1] });
+            //Paquete paqueteIn = new PaqueteInternacional(
+            //	107.5f,
+            //	0.21f,
+            //	false,
+            //	5,
+            //	true,
+            //	DateTime.Now,
+            //	Paquete.contadorPaquetes,
+            //	"Mexico",
+            //	8000.5f,
+            //	6,
+            //	8000.5f,
+            //	new List<Lugar>(){lLugares[0]});
+            //lPaquetes.Add(paqueteIn);
+            //lPaquetes.Add(paqueteNa);
+            do
             {
 				Console.WriteLine("1 - Nuevo cliente");
 				Console.WriteLine("2 - Listar facturas de un cliente");

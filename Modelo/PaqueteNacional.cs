@@ -29,7 +29,6 @@ namespace Modelo
             string nombre,
             float precio,
             int cantidadCuota,
-            float importeTotal,
             List<Lugar> lugares) : base(
                 cantidadDia,
                 estado,
@@ -38,16 +37,17 @@ namespace Modelo
                 nombre,
                 precio,
                 cantidadCuota,
-                importeTotal,
                 lugares)
         {
             this.ModoDePago = modoDePago;
             this.PorcentajePorImpuestos = porcentajePorImpuestos;
+            CalcularImporte();
         }
 
         public override void CalcularImporte()
         {
-            importeTotal = precio * porcentajePorImpuestos;
+            this.importeTotal = precio * (1 + porcentajePorImpuestos);
+
         }
 
         public override string ToString()

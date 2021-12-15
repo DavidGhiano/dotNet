@@ -46,7 +46,6 @@ namespace Modelo
             string nombre,
             float precio, 
             int cantidadCuota, 
-            float importeTotal, 
             List<Lugar> lugares)
         {
             this.cantidadDia = cantidadDia;
@@ -56,7 +55,6 @@ namespace Modelo
             this.nombre = nombre;
             this.precio = precio;
             this.cantidadCuota = cantidadCuota;
-            this.importeTotal = importeTotal;
             this.lugares = lugares;
             contadorPaquetes++;
         }
