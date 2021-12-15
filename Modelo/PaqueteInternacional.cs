@@ -53,7 +53,7 @@ namespace Modelo
 
         public override void CalcularImporte()
         {
-            this.importeTotal = precio + importePorImpuestos;
+            this.importeTotal = precio * cotizacionDolar + importePorImpuestos;
         }
 
         public override string ToString()
