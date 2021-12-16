@@ -1,1 +1,1 @@
-[{"Direccion":"Ituzaing\u00F3 750","IdCliente":1,"Nacionalidad":"Argentina","Provincia":"C\u00F3rdoba","Telefono":"4611447","Apellido":"Ghiano","Nombre":"David","Dni":"35637879"}]
+[{"Direccion":"Ituzaing\u00F3 750","IdCliente":1,"Nacionalidad":"Argentina","Provincia":"C\u00F3rdoba","Telefono":"4611447","Apellido":"Ghiano","Nombre":"David","Dni":"35637879","Habilitado":false},{"Direccion":"Direccion2","IdCliente":2,"Nacionalidad":"Nacionalidad2","Provincia":"Provincia2","Telefono":"Telefono2","Apellido":"Apellido2","Nombre":"Nombre2","Dni":"123456","Habilitado":true}]

@@ -16,6 +16,7 @@ namespace Modelo
         protected string apellido;
         protected string nombre;
         protected string dni;
+        protected bool habilitado;
 
         public static int contadorClientes = 0;
 
@@ -34,6 +35,7 @@ namespace Modelo
             this.apellido = "";
             this.nombre = "";
             this.dni = "";
+            this.habilitado = false;
             contadorClientes++;
         }
 
@@ -55,6 +57,7 @@ namespace Modelo
             this.apellido = apellido;
             this.nombre = nombre;
             this.dni = dni;
+            this.habilitado = true;
             contadorClientes++;
         }
 
@@ -66,17 +69,7 @@ namespace Modelo
         public string Apellido { get => apellido; set => apellido = value; }
         public string Nombre { get => nombre; set => nombre = value; }
         public string Dni { get => dni; set => dni = value; }
-
-        public virtual void mostrarDatos()
-        {
-            Console.WriteLine("DNI: " + dni);
-            Console.WriteLine("Apellidos y nombres: " + apellido + ", " + nombre);
-            Console.WriteLine("Dirección: " + direccion);
-            Console.WriteLine("Teléfono: " + telefono);
-            Console.WriteLine("Nacionalidad: " + nacionalidad);
-            Console.WriteLine("Provincia: " + provincia);
-            Console.WriteLine("\n");
-        }
+        public bool Habilitado { get => habilitado; set => habilitado = value; }
 
         public override string ToString()
         {

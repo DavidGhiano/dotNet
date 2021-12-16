@@ -15,9 +15,12 @@ namespace AgenciaDeViajes
 		{
 			ConsoleKeyInfo opcion;
 			string dniCliente;
-			string nombrePaquete;
-			Cliente cliente;
+			string cuitCliente;
+			int idPaquete;
+			ClienteCorporativo clienteCorporativo;
+			Cliente clienteParticular;
 			Paquete paquete;
+
             #region CLIENTE
 			List<Cliente> lclientes;
 			RepoJSONCliente repoJsonCliente = new RepoJSONCliente("clientes.json");
@@ -121,103 +124,317 @@ namespace AgenciaDeViajes
             //lPaquetes.Add(paqueteNa);
             do
             {
-				Console.WriteLine("1 - Nuevo cliente");
-				Console.WriteLine("2 - Listar facturas de un cliente");
-				Console.WriteLine("3 - Inactivar paquete");
-				Console.WriteLine("4 - Actualizar precio de un paquete");
-				Console.WriteLine("5 - Listar clientes que tengan al menos dos ventas");
+				Console.WriteLine("1 - Gestionar clientes");
+				Console.WriteLine("2 - Gestionar lugares");
+				Console.WriteLine("3 - Gestionar paquetes");
+				Console.WriteLine("4 - Gestionar ventas");
+				Console.WriteLine("5 - Listar facturas de un cliente");
+				Console.WriteLine("6 - Inactivar paquete");
+				Console.WriteLine("7 - Actualizar precio de un paquete");
+				Console.WriteLine("8 - Listar clientes que tengan al menos dos ventas");
 				Console.WriteLine("ESC - Salir");
 				Console.Write("Ingrese una opción: ");
 				do
 				{
 					opcion = Console.ReadKey();
-				} while (((int)opcion.KeyChar != 27) && (opcion.KeyChar < '1' || opcion.KeyChar > '5'));
+				} while (((int)opcion.KeyChar != 27) && (opcion.KeyChar < '1' || opcion.KeyChar > '8'));
 				switch (opcion.KeyChar)
 				{
 					case '1':
-						Console.Write("\n\nTipo de cliente: ");
-						Console.WriteLine("\n1 - Cliente corporativo");
-						Console.WriteLine("2 - Cliente particular");
+						Console.Write("\n\nGestión de clientes: ");
+						Console.WriteLine("\n1 - Nuevo cliente");
+						Console.WriteLine("2 - Editar cliente");
+						Console.WriteLine("3 - Baja de cliente");
 						Console.WriteLine("ESC - Salir");
 						Console.Write("Ingrese una opción: ");
 						do
 						{
 							opcion = Console.ReadKey();
-						} while (((int)opcion.KeyChar != 27) && (opcion.KeyChar < '1' || opcion.KeyChar > '2'));
+						} while (((int)opcion.KeyChar != 27) && (opcion.KeyChar < '1' || opcion.KeyChar > '3'));
 						switch (opcion.KeyChar)
 						{
 							case '1':
-								try
+								Console.Write("\n\nTipo de cliente: ");
+								Console.WriteLine("\n1 - Cliente corporativo");
+								Console.WriteLine("2 - Cliente particular");
+								Console.WriteLine("ESC - Salir");
+								Console.Write("Ingrese una opción: ");
+								do
 								{
-									Console.WriteLine("\n\nIngrese los datos para el nuevo cliente particular:");
-									Console.Write("CUIT: ");
-									string cuit = Console.ReadLine();
-									Console.Write("Razón social: ");
-									string razonSocial = Console.ReadLine();
-									Console.Write("DNI del viajante: ");
-									string dniCC = Console.ReadLine();
-									Console.Write("Nombre del viajante: ");
-									string nombreCC = Console.ReadLine();
-									Console.Write("Apellido del viajante: ");
-									string apellidoCC = Console.ReadLine();
-									Console.Write("Dirección: ");
-									string direccionCC = Console.ReadLine();
-									Console.Write("Teléfono: ");
-									string telefonoCC = Console.ReadLine();
-									Console.Write("Nacionalidad: ");
-									string nacionalidadCC = Console.ReadLine();
-									Console.Write("Provincia: ");
-									string provinciaCC = Console.ReadLine();
-									int idClienteCC = Cliente.contadorClientes;
-									ClienteCorporativo cliCC = new ClienteCorporativo(cuit, razonSocial, direccionCC, idClienteCC, nacionalidadCC, provinciaCC, telefonoCC, apellidoCC, nombreCC, dniCC);
-									lclientes.Add(cliCC);
-								}
-								catch (Exception ex)
+									opcion = Console.ReadKey();
+								} while (((int)opcion.KeyChar != 27) && (opcion.KeyChar < '1' || opcion.KeyChar > '2'));
+								switch (opcion.KeyChar)
 								{
-									Console.WriteLine("UPS" + ex.Message);
+									case '1':
+										try
+										{
+											Console.WriteLine("\n\nIngrese los datos para el nuevo cliente corporativo:");
+											Console.Write("CUIT: ");
+											string cuit = Console.ReadLine();
+											Console.Write("Razón social: ");
+											string razonSocial = Console.ReadLine();
+											Console.Write("DNI del viajante: ");
+											string dniCC = Console.ReadLine();
+											Console.Write("Nombre del viajante: ");
+											string nombreCC = Console.ReadLine();
+											Console.Write("Apellido del viajante: ");
+											string apellidoCC = Console.ReadLine();
+											Console.Write("Dirección: ");
+											string direccionCC = Console.ReadLine();
+											Console.Write("Teléfono: ");
+											string telefonoCC = Console.ReadLine();
+											Console.Write("Nacionalidad: ");
+											string nacionalidadCC = Console.ReadLine();
+											Console.Write("Provincia: ");
+											string provinciaCC = Console.ReadLine();
+											int idClienteCC = Cliente.contadorClientes;
+											ClienteCorporativo cliCC = new ClienteCorporativo(cuit, razonSocial, direccionCC, idClienteCC, nacionalidadCC, provinciaCC, telefonoCC, apellidoCC, nombreCC, dniCC);
+											lCliCorporativos.Add(cliCC);
+										}
+										catch (Exception ex)
+										{
+											Console.WriteLine("UPS" + ex.Message);
+										}
+										Console.Write("\n");
+										break;
+									case '2':
+										try
+										{
+											Console.WriteLine("\n\nIngrese los datos para el nuevo cliente particular:");
+											Console.Write("DNI: ");
+											string dni = Console.ReadLine();
+											Console.Write("Nombre: ");
+											string nombre = Console.ReadLine();
+											Console.Write("Apellido: ");
+											string apellido = Console.ReadLine();
+											Console.Write("Dirección: ");
+											string direccion = Console.ReadLine();
+											Console.Write("Teléfono: ");
+											string telefono = Console.ReadLine();
+											Console.Write("Nacionalidad: ");
+											string nacionalidad = Console.ReadLine();
+											Console.Write("Provincia: ");
+											string provincia = Console.ReadLine();
+											int idCliente = Cliente.contadorClientes;
+											Cliente cli = new Cliente(direccion, idCliente, nacionalidad, provincia, telefono, apellido, nombre, dni);
+											lclientes.Add(cli);
+										}
+										catch (Exception ex)
+										{
+											Console.WriteLine("UPS" + ex.Message);
+										}
+										Console.Write("\n");
+										break;
+									default:
+										break;
 								}
-								Console.Write("\n");
 								break;
 							case '2':
-								try
+								Console.Write("\n\nTipo de cliente: ");
+								Console.WriteLine("\n1 - Cliente corporativo");
+								Console.WriteLine("2 - Cliente particular");
+								Console.WriteLine("ESC - Salir");
+								Console.Write("Ingrese una opción: ");
+								do
 								{
-									Console.WriteLine("\n\nIngrese los datos para el nuevo cliente particular:");
-									Console.Write("DNI: ");
-									string dni = Console.ReadLine();
-									Console.Write("Nombre: ");
-									string nombre = Console.ReadLine();
-									Console.Write("Apellido: ");
-									string apellido = Console.ReadLine();
-									Console.Write("Dirección: ");
-									string direccion = Console.ReadLine();
-									Console.Write("Teléfono: ");
-									string telefono = Console.ReadLine();
-									Console.Write("Nacionalidad: ");
-									string nacionalidad = Console.ReadLine();
-									Console.Write("Provincia: ");
-									string provincia = Console.ReadLine();
-									int idCliente = Cliente.contadorClientes;
-									Cliente cli = new Cliente(direccion, idCliente, nacionalidad, provincia, telefono, apellido, nombre, dni);
-									lclientes.Add(cli);
-								}
-								catch (Exception ex)
+									opcion = Console.ReadKey();
+								} while (((int)opcion.KeyChar != 27) && (opcion.KeyChar < '1' || opcion.KeyChar > '2'));
+								switch (opcion.KeyChar)
 								{
-									Console.WriteLine("UPS" + ex.Message);
+									case '1':
+										try
+										{
+											Console.Write("\n\nIngrese el CUIT del cliente: ");
+											cuitCliente = Console.ReadLine();
+											clienteCorporativo = lCliCorporativos.Find(x => x.Cuit == cuitCliente);
+											if (clienteCorporativo != null)
+											{
+												Console.WriteLine(clienteCorporativo.ToString());
+
+												Console.WriteLine("Ingrese los nuevos datos del cliente corporativo:");
+												Console.Write("Razón social: ");
+												string razonSocial = Console.ReadLine();
+												Console.Write("DNI del viajante: ");
+												string dniCC = Console.ReadLine();
+												Console.Write("Nombre del viajante: ");
+												string nombreCC = Console.ReadLine();
+												Console.Write("Apellido del viajante: ");
+												string apellidoCC = Console.ReadLine();
+												Console.Write("Dirección: ");
+												string direccionCC = Console.ReadLine();
+												Console.Write("Teléfono: ");
+												string telefonoCC = Console.ReadLine();
+												Console.Write("Nacionalidad: ");
+												string nacionalidadCC = Console.ReadLine();
+												Console.Write("Provincia: ");
+												string provinciaCC = Console.ReadLine();
+												int idClienteCC = clienteCorporativo.IdCliente;
+												ClienteCorporativo cliCC = new ClienteCorporativo(cuitCliente, razonSocial, direccionCC, idClienteCC, nacionalidadCC, provinciaCC, telefonoCC, apellidoCC, nombreCC, dniCC);
+												lCliCorporativos.Remove(clienteCorporativo);
+												lCliCorporativos.Add(cliCC);
+											}
+											else
+											{
+												Console.WriteLine("\nCliente no encontrado. Crear primero el cliente");
+												Console.Write("\n");
+											}
+										}
+										catch (Exception ex)
+										{
+											Console.WriteLine("UPS" + ex.Message);
+										}
+										Console.Write("\n");
+										break;
+									case '2':
+										try
+										{
+											Console.Write("\n\nIngrese el DNI del cliente: ");
+											dniCliente = Console.ReadLine();
+											clienteParticular = lclientes.Find(x => x.Dni == dniCliente);
+											if (clienteParticular != null)
+											{
+												Console.WriteLine(clienteParticular.ToString());
+
+												Console.WriteLine("Ingrese los nuevos datos del cliente particular:");
+												Console.Write("Nombre: ");
+												string nombre = Console.ReadLine();
+												Console.Write("Apellido: ");
+												string apellido = Console.ReadLine();
+												Console.Write("Dirección: ");
+												string direccion = Console.ReadLine();
+												Console.Write("Teléfono: ");
+												string telefono = Console.ReadLine();
+												Console.Write("Nacionalidad: ");
+												string nacionalidad = Console.ReadLine();
+												Console.Write("Provincia: ");
+												string provincia = Console.ReadLine();
+												int idCliente = clienteParticular.IdCliente;
+												Cliente cli = new Cliente(direccion, idCliente, nacionalidad, provincia, telefono, apellido, nombre, dniCliente);
+												lclientes.Remove(clienteParticular);
+												lclientes.Add(cli);
+											}
+											else
+											{
+												Console.WriteLine("\nCliente no encontrado. Crear primero el cliente");
+												Console.Write("\n");
+											}
+										}
+										catch (Exception ex)
+										{
+											Console.WriteLine("UPS" + ex.Message);
+										}
+										Console.Write("\n");
+										break;
+									default:
+										break;
 								}
-								Console.Write("\n");
+								break;
+							case '3':
+								Console.Write("\n\nIngrese el DNI del cliente: ");
+								dniCliente = Console.ReadLine();
+								clienteParticular = lclientes.Find(x => x.Dni == dniCliente);
+								if (clienteParticular != null)
+								{
+									Console.Write("\n");
+									Console.WriteLine(clienteParticular.ToString());
+
+									if (clienteParticular.Habilitado)
+									{
+										Console.Write("¿Desea inactivar el cliente?\n");
+										Console.WriteLine("s/S: Sí");
+										Console.WriteLine("n/N: No");
+										ConsoleKeyInfo confirma;
+										do
+										{
+											confirma = Console.ReadKey(true);
+										} while ((confirma.KeyChar != 's') && (confirma.KeyChar != 'S')
+										&& (confirma.KeyChar != 'n') && (confirma.KeyChar != 'N'));
+										if (confirma.KeyChar == 's' || confirma.KeyChar == 'S')
+										{
+											clienteParticular.Habilitado = false;
+											Console.WriteLine("\nCliente inactivado existosamente.\n");
+										} else Console.Write("\n");
+									}
+									else
+									{
+										Console.WriteLine("\nEl cliente ya se encuentra inactivado.\n¿Desea activar el cliente?");
+										Console.WriteLine("s/S: Sí");
+										Console.WriteLine("n/N: No");
+										ConsoleKeyInfo confirma;
+										do
+										{
+											confirma = Console.ReadKey(true);
+										} while ((confirma.KeyChar != 's') && (confirma.KeyChar != 'S')
+										&& (confirma.KeyChar != 'n') && (confirma.KeyChar != 'N'));
+										if (confirma.KeyChar == 's' || confirma.KeyChar == 'S')
+										{
+											clienteParticular.Habilitado = true;
+											Console.WriteLine("\nCliente activado existosamente.\n");
+										} else Console.Write("\n");
+									}
+								}
+								else
+								{
+									clienteCorporativo = lCliCorporativos.Find(x => x.Dni == dniCliente);
+									if (clienteCorporativo != null)
+									{
+										Console.Write("\n");
+										Console.WriteLine(clienteCorporativo.ToString());
+
+										if (clienteCorporativo.Habilitado)
+										{
+											Console.Write("\n\n¿Desea inactivar el cliente?");
+											Console.WriteLine("s/S: Sí");
+											Console.WriteLine("n/N: No");
+											ConsoleKeyInfo confirma;
+											do
+											{
+												confirma = Console.ReadKey(true);
+											} while ((confirma.KeyChar != 's') && (confirma.KeyChar != 'S')
+											&& (confirma.KeyChar != 'n') && (confirma.KeyChar != 'N'));
+											if (confirma.KeyChar == 's' || confirma.KeyChar == 'S')
+											{
+												clienteCorporativo.Habilitado = false;
+												Console.WriteLine("\nCliente inactivado existosamente.\n");
+											} else Console.Write("\n");
+										}
+										else
+										{
+											Console.WriteLine("\nEl cliente ya se encuentra inactivado.\n¿Desea activar el cliente?");
+											Console.WriteLine("s/S: Sí");
+											Console.WriteLine("n/N: No");
+											ConsoleKeyInfo confirma;
+											do
+											{
+												confirma = Console.ReadKey(true);
+											} while ((confirma.KeyChar != 's') && (confirma.KeyChar != 'S')
+											&& (confirma.KeyChar != 'n') && (confirma.KeyChar != 'N'));
+											if (confirma.KeyChar == 's' || confirma.KeyChar == 'S')
+											{
+												clienteCorporativo.Habilitado = true;
+												Console.WriteLine("\nCliente activado existosamente.\n");
+											}else Console.Write("\n");
+										}
+									}
+									else
+									{
+										Console.WriteLine("\nCliente no encontrado. Crear primero el cliente");
+										Console.Write("\n");
+									}
+								}
 								break;
 							default:
 								break;
 						}
 						break;
-					case '2':
+					case '5':
 						Console.Write("\n\nIngrese el DNI del cliente: ");
 						dniCliente = Console.ReadLine();
-						cliente = lclientes.Find(x => x.Dni == dniCliente);
-						if (cliente != null)
+						clienteParticular = lclientes.Find(x => x.Dni == dniCliente);
+						if (clienteParticular != null)
 						{
-							Console.WriteLine(cliente.ToString());
-							List<Factura> facturasCli = lFacturas.FindAll(x => x.IdCliente == cliente.IdCliente);
+							Console.WriteLine(clienteParticular.ToString());
+							List<Factura> facturasCli = lFacturas.FindAll(x => x.IdCliente == clienteParticular.IdCliente);
 							foreach(Factura f in facturasCli)
 							{
 								Console.WriteLine(f.ToString());
@@ -234,32 +451,76 @@ namespace AgenciaDeViajes
 									Console.WriteLine(paquete1.ToString());
 								}
 							}
-							Console.Write("\n");
 						}
 						else
 						{
-							Console.WriteLine("\nCliente no encontrado. Crear primero el cliente");
-							Console.Write("\n");
+							clienteCorporativo = lCliCorporativos.Find(x => x.Dni == dniCliente);
+							if (clienteCorporativo != null)
+							{
+								Console.WriteLine(clienteCorporativo.ToString());
+								List<Factura> facturasCli = lFacturas.FindAll(x => x.IdCliente == clienteCorporativo.IdCliente);
+								foreach (Factura f in facturasCli)
+								{
+									Console.WriteLine(f.ToString());
+									Paquete paquete1 = null;
+									foreach (LineaDeFactura lf in f.LineasDeFactura)
+									{
+										paquete1 = lPaqInter.Find(x => x.IdPaquete == lf.IdPaquete);
+										if (paquete1 == null)
+										{
+											paquete1 = lPaqNac.Find(x => x.IdPaquete == lf.IdPaquete);
+										}
+
+										Console.WriteLine(lf.ToString());
+										Console.WriteLine(paquete1.ToString());
+									}
+								}
+								Console.Write("\n");
+							}
+							else
+							{
+								Console.WriteLine("\nCliente no encontrado. Crear primero el cliente");
+								Console.Write("\n");
+							}
 						}
 						break;
-					case '3':
+					case '6':
+						Console.WriteLine("\n\nPaquetes Nacionales:");
+						foreach (Paquete p in lPaqNac)
+						{
+							if (p.Estado)
+							{
+								Console.WriteLine(p.IdPaquete + " - " + p.Nombre);
+							}
+						}
+						Console.Write("\n");
+						Console.WriteLine("Paquetes Internacionales:");
+						foreach (Paquete p in lPaqInter)
+						{
+							if (p.Estado)
+							{
+								Console.WriteLine(p.IdPaquete + " - " + p.Nombre);
+							}
+						}
+						Console.Write("\n");
 
-						Console.Write("\n\nIngrese el nombre del paquete: ");
-						nombrePaquete = Console.ReadLine();
+						Console.Write("\nIngrese el ID del paquete: ");
+						idPaquete = int.Parse(Console.ReadLine());
 						
-						paquete = lPaqInter.Find((x => x.Nombre == nombrePaquete));
+						paquete = lPaqInter.Find((x => x.IdPaquete == idPaquete));
 						if (paquete == null)
 						{
-							paquete = lPaqNac.Find((x => x.Nombre == nombrePaquete));
+							paquete = lPaqNac.Find((x => x.IdPaquete == idPaquete));
 						}
 
 						if (paquete != null)
 						{
+							Console.Write("\n");
 							Console.WriteLine(paquete.ToString());
 
 							if (paquete.Estado)
 							{
-								Console.Write("\n\n¿Desea inactivar el paquete?");
+								Console.Write("¿Desea inactivar el paquete?\n");
 								Console.WriteLine("s/S: Sí");
 								Console.WriteLine("n/N: No");
 								ConsoleKeyInfo confirma;
@@ -272,16 +533,24 @@ namespace AgenciaDeViajes
 								{
 									paquete.Estado = false;
 									Console.WriteLine("\nPaquete inactivado existosamente.\n");
-								}
-								else
-								{
-									Console.WriteLine("\nError al inactivar paquete.\n");
-								}
+								} else Console.Write("\n");
 							}
 							else
 							{
-								Console.WriteLine("\nEl paquete ya se encuentra inactivado.");
-								Console.Write("\n");
+								Console.WriteLine("El paquete ya se encuentra inactivado.\n¿Desea activar el paquete?");
+								Console.WriteLine("s/S: Sí");
+								Console.WriteLine("n/N: No");
+								ConsoleKeyInfo confirma;
+								do
+								{
+									confirma = Console.ReadKey(true);
+								} while ((confirma.KeyChar != 's') && (confirma.KeyChar != 'S')
+								&& (confirma.KeyChar != 'n') && (confirma.KeyChar != 'N'));
+								if (confirma.KeyChar == 's' || confirma.KeyChar == 'S')
+								{
+									paquete.Estado = true;
+									Console.WriteLine("\nPaquete activado existosamente.\n");
+								} else Console.Write("\n");
 							}
 						}
 						else
@@ -290,25 +559,45 @@ namespace AgenciaDeViajes
 							Console.Write("\n");
 						}
 						break;
-					case '4':
+					case '7':
+						Console.WriteLine("\n\nPaquetes Nacionales:");
+						foreach (Paquete p in lPaqNac)
+						{
+							if (p.Estado)
+							{
+								Console.WriteLine(p.IdPaquete + " - " + p.Nombre);
+							}
+						}
+						Console.Write("\n");
 
-						Console.Write("\n\nIngrese el nombre del paquete: ");
-						nombrePaquete = Console.ReadLine();
+						Console.WriteLine("Paquetes Internacionales:");
+						foreach (Paquete p in lPaqInter)
+						{
+							if (p.Estado)
+							{
+								Console.WriteLine(p.IdPaquete + " - " + p.Nombre);
+							}
+						}
+						Console.Write("\n");
 
-						paquete = lPaqInter.Find((x => x.Nombre == nombrePaquete));
+						Console.Write("Ingrese el ID del paquete: ");
+						idPaquete = int.Parse(Console.ReadLine());
+
+						paquete = lPaqInter.Find((x => x.IdPaquete == idPaquete && x.Estado == true));
 						if (paquete == null)
 						{
-							paquete = lPaqNac.Find((x => x.Nombre == nombrePaquete));
+							paquete = lPaqNac.Find((x => x.IdPaquete == idPaquete && x.Estado == true));
 						}
 
 						if (paquete != null)
 						{
-							Console.WriteLine($"Precio del paquete seleccionado:{paquete.Precio.ToString()}");
+							Console.Write("\n");
+							Console.WriteLine($"Precio del paquete seleccionado: {paquete.Precio.ToString()}");
 
-							Console.Write("\n\nIngrese el nuevo precio: ");
+							Console.Write("\nIngrese el nuevo precio: ");
 							float nuevoPrecioPaquete = float.Parse(Console.ReadLine());
 
-							Console.Write("\n\n¿Desea actualizar el precio del paquete?");
+							Console.Write("\n¿Desea actualizar el precio del paquete?\n");
 							Console.WriteLine("s/S: Sí");
 							Console.WriteLine("n/N: No");
 							ConsoleKeyInfo confirma;
@@ -321,11 +610,7 @@ namespace AgenciaDeViajes
 							{
 								paquete.Precio = nuevoPrecioPaquete;
 								Console.WriteLine("\nPrecio actualizado existosamente.\n");
-							}
-                            else
-                            {
-								Console.WriteLine("\nError al actualizar precio.\n");
-                            }
+							}  else Console.Write("\n");
 														
 						}
 						else
@@ -334,7 +619,7 @@ namespace AgenciaDeViajes
 							Console.Write("\n");
 						}
 						break;
-					case '5':
+					case '8':
 						Console.WriteLine("\nClientes con más de dos compras:");
 						Console.Write("\n");
 						foreach (Cliente cli in lclientes)
@@ -342,18 +627,18 @@ namespace AgenciaDeViajes
 							if (lFacturas.FindAll(x => x.IdCliente == cli.IdCliente).Count >= 2)
 							{
 								Console.WriteLine(" - " + cli.Nombre + " " + cli.Apellido);
-								Console.Write("\n");
 							}
 						}
+						Console.Write("\n");
 
 						foreach (ClienteCorporativo cliCorp in lCliCorporativos)
 						{
 							if (lFacturas.FindAll(x => x.IdCliente == cliCorp.IdCliente).Count >= 2)
 							{
 								Console.WriteLine(" - " + cliCorp.RazonSocial);
-								Console.Write("\n");
 							}
 						}
+						Console.Write("\n");
 						break;
 					default:
 						break;
@@ -367,6 +652,11 @@ namespace AgenciaDeViajes
 			repoJsonPaquete.SerializarYGuardar(lPaquetes);
 			repoJsonInter.SerializarYGuardar(lPaqInter);
 			repoJsonNac.SerializarYGuardar(lPaqNac);
+		}
+
+		private static void gestionClientes()
+		{
+
 		}
 	}
 }
