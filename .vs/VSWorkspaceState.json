@@ -1,7 +1,12 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\AgenciaDeViajes",
+    "\\DatosJSON\\bin",
+    "\\DatosJSON\\bin\\Debug",
+    "\\DatosJSON\\obj\\Debug",
+    "\\Modelo"
   ],
-  "SelectedNode": "\\Modelo.sln",
+  "SelectedNode": "\\AgenciaDeViajes\\Program.cs",
   "PreviewInSolutionExplorer": false
 }

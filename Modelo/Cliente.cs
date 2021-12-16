@@ -74,7 +74,7 @@ namespace Modelo
         public void ImprimirDatos()
         {
             Console.ForegroundColor = ConsoleColor.White;
-            Console.Write("Apellido y Nombre:");
+            Console.Write("Apellido y Nombre: ");
             Console.ForegroundColor = ConsoleColor.Gray;
             Console.WriteLine($"{apellido}, {nombre}");
             Console.ForegroundColor = ConsoleColor.White;

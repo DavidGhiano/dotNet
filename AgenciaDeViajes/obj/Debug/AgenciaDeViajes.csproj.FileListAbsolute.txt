@@ -47,3 +47,28 @@ D:\Cursos\Curso .NET UTN - FRBA\Trabajo Integrador\dotNet\AgenciaDeViajes\bin\De
 D:\Cursos\Curso .NET UTN - FRBA\Trabajo Integrador\dotNet\AgenciaDeViajes\bin\Debug\System.Numerics.Vectors.xml
 D:\Cursos\Curso .NET UTN - FRBA\Trabajo Integrador\dotNet\AgenciaDeViajes\bin\Debug\System.Buffers.xml
 D:\Cursos\Curso .NET UTN - FRBA\Trabajo Integrador\dotNet\AgenciaDeViajes\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\manun\Documents\GitHub\dotNet\AgenciaDeViajes\obj\Debug\AgenciaDeViajes.csproj.AssemblyReference.cache
+C:\Users\manun\Documents\GitHub\dotNet\AgenciaDeViajes\obj\Debug\AgenciaDeViajes.csproj.CoreCompileInputs.cache
+C:\Users\manun\Documents\GitHub\dotNet\AgenciaDeViajes\obj\Debug\AgenciaDeViajes.exe
+C:\Users\manun\Documents\GitHub\dotNet\AgenciaDeViajes\obj\Debug\AgenciaDeViajes.pdb
+C:\Users\manun\Documents\GitHub\dotNet\AgenciaDeViajes\bin\Debug\AgenciaDeViajes.exe.config
+C:\Users\manun\Documents\GitHub\dotNet\AgenciaDeViajes\bin\Debug\AgenciaDeViajes.exe
+C:\Users\manun\Documents\GitHub\dotNet\AgenciaDeViajes\bin\Debug\AgenciaDeViajes.pdb
+C:\Users\manun\Documents\GitHub\dotNet\AgenciaDeViajes\bin\Debug\DatosJSON.dll
+C:\Users\manun\Documents\GitHub\dotNet\AgenciaDeViajes\bin\Debug\Modelo.dll
+C:\Users\manun\Documents\GitHub\dotNet\AgenciaDeViajes\bin\Debug\System.Text.Json.dll
+C:\Users\manun\Documents\GitHub\dotNet\AgenciaDeViajes\bin\Debug\System.Memory.dll
+C:\Users\manun\Documents\GitHub\dotNet\AgenciaDeViajes\bin\Debug\System.Text.Encodings.Web.dll
+C:\Users\manun\Documents\GitHub\dotNet\AgenciaDeViajes\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\manun\Documents\GitHub\dotNet\AgenciaDeViajes\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\manun\Documents\GitHub\dotNet\AgenciaDeViajes\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\manun\Documents\GitHub\dotNet\AgenciaDeViajes\bin\Debug\System.Buffers.dll
+C:\Users\manun\Documents\GitHub\dotNet\AgenciaDeViajes\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\manun\Documents\GitHub\dotNet\AgenciaDeViajes\bin\Debug\DatosJSON.pdb
+C:\Users\manun\Documents\GitHub\dotNet\AgenciaDeViajes\bin\Debug\DatosJSON.dll.config
+C:\Users\manun\Documents\GitHub\dotNet\AgenciaDeViajes\bin\Debug\Modelo.pdb
+C:\Users\manun\Documents\GitHub\dotNet\AgenciaDeViajes\bin\Debug\System.Memory.xml
+C:\Users\manun\Documents\GitHub\dotNet\AgenciaDeViajes\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\manun\Documents\GitHub\dotNet\AgenciaDeViajes\bin\Debug\System.Buffers.xml
+C:\Users\manun\Documents\GitHub\dotNet\AgenciaDeViajes\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\manun\Documents\GitHub\dotNet\AgenciaDeViajes\obj\Debug\AgenciaDeViajes.csproj.CopyComplete

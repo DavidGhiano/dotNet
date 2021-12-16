@@ -1,1 +1,1 @@
-[{"IdLugar":1,"Nombre":"Brasil"},{"IdLugar":2,"Nombre":"Argentina"}]
+[{"IdLugar":1,"Nombre":"Brasil","Habilitado":true},{"IdLugar":2,"Nombre":"Argentina","Habilitado":true},{"IdLugar":5,"Nombre":"Francia","Habilitado":true}]

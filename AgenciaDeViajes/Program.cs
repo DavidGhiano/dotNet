@@ -15,9 +15,11 @@ namespace AgenciaDeViajes
 		public static string dniCliente;
 		public static string cuitCliente;
 		public static int idPaquete;
+		public static string nombreLugar;
 		public static ClienteCorporativo clienteCorporativo;
 		public static Cliente clienteParticular;
 		public static Paquete paquete;
+		public static Lugar lugar;
 
 		public static List<Cliente> lclientes;
 		public static RepoJSONCliente repoJsonCliente = new RepoJSONCliente("clientes.json");
@@ -55,7 +57,7 @@ namespace AgenciaDeViajes
 			repoJsonNac.LeerYDeserializar(out lPaqNac);
 
 
-
+			#region Comentarios
 			//lLugares = new List<Lugar>() { new Lugar(Lugar.contadorLugares, "Brasil"), new Lugar(Lugar.contadorLugares, "Argentina") };
 			//lPaqInter = new List<PaqueteInternacional>() { new PaqueteInternacional(100, 1000, true, 10, true, DateTime.Parse("20-01-2021"), Paquete.contadorPaquetes, "Paquete Brasil", 6500, 3, new List<Lugar>() { lLugares[0] }) };
 			//lPaqNac = new List<PaqueteNacional>() { new PaqueteNacional("Contado", 0.21f, 15, true, DateTime.Parse("20-01-2021"), Paquete.contadorPaquetes, "Paquete Argentina", 3500, 1, new List<Lugar>() { lLugares[1] }) };
@@ -115,6 +117,8 @@ namespace AgenciaDeViajes
 			//	new List<Lugar>(){lLugares[0]});
 			//lPaquetes.Add(paqueteIn);
 			//lPaquetes.Add(paqueteNa);
+			#endregion
+
 			do
 			{
 				Console.WriteLine("1 - Gestionar clientes");
@@ -122,7 +126,7 @@ namespace AgenciaDeViajes
 				Console.WriteLine("3 - Gestionar paquetes");
 				Console.WriteLine("4 - Gestionar ventas");
 				Console.WriteLine("5 - Listar facturas de un cliente");
-				Console.WriteLine("6 - Inactivar paquete");
+				Console.WriteLine("6 - Inactivar/activar paquete");
 				Console.WriteLine("7 - Actualizar precio de un paquete");
 				Console.WriteLine("8 - Listar clientes que tengan al menos dos ventas");
 				Console.WriteLine("ESC - Salir");
@@ -136,9 +140,23 @@ namespace AgenciaDeViajes
 					case '1':
 						gestionClientes();
 						break;
+
+					case '2':
+						gestionLugares();
+						break;
+
+					case '3':
+						//gestionPaquetes();
+						break;
+
+					case '4':
+						//gestionVentas();
+						break;
+
 					case '5':
 						listaFacturaCliente();
 						break;
+
 					case '6':
 						Console.WriteLine("\n\nPaquetes Nacionales:");
 						foreach (Paquete p in lPaqNac)
@@ -175,8 +193,9 @@ namespace AgenciaDeViajes
 
 							if (paquete.Estado)
 							{
-								Console.Write("¿Desea inactivar el paquete?\n");
-								Console.WriteLine("s/S: Sí");
+								Console.ForegroundColor = ConsoleColor.DarkMagenta;
+								Console.Write("¿Desea inactivar el paquete?");
+								Console.WriteLine("\ns/S: Sí");
 								Console.WriteLine("n/N: No");
 								ConsoleKeyInfo confirma;
 								do
@@ -193,7 +212,7 @@ namespace AgenciaDeViajes
 							else
 							{
 								Console.WriteLine("El paquete ya se encuentra inactivado.\n¿Desea activar el paquete?");
-								Console.WriteLine("s/S: Sí");
+								Console.WriteLine("\ns/S: Sí");
 								Console.WriteLine("n/N: No");
 								ConsoleKeyInfo confirma;
 								do
@@ -214,6 +233,7 @@ namespace AgenciaDeViajes
 							Console.Write("\n");
 						}
 						break;
+
 					case '7':
 						Console.WriteLine("\n\nPaquetes Nacionales:");
 						foreach (Paquete p in lPaqNac)
@@ -252,6 +272,8 @@ namespace AgenciaDeViajes
 							Console.Write("\nIngrese el nuevo precio: ");
 							float nuevoPrecioPaquete = float.Parse(Console.ReadLine());
 
+
+							Console.ForegroundColor = ConsoleColor.DarkMagenta;
 							Console.Write("\n¿Desea actualizar el precio del paquete?\n");
 							Console.WriteLine("s/S: Sí");
 							Console.WriteLine("n/N: No");
@@ -274,6 +296,7 @@ namespace AgenciaDeViajes
 							Console.Write("\n");
 						}
 						break;
+
 					case '8':
 						Console.WriteLine("\nClientes con más de dos compras:");
 						Console.Write("\n");
@@ -295,6 +318,7 @@ namespace AgenciaDeViajes
 						}
 						Console.Write("\n");
 						break;
+
 					default:
 						break;
 				}
@@ -375,6 +399,9 @@ namespace AgenciaDeViajes
 						int idClienteCC = Cliente.contadorClientes;
 						ClienteCorporativo cliCC = new ClienteCorporativo(cuit, razonSocial, direccionCC, idClienteCC, nacionalidadCC, provinciaCC, telefonoCC, apellidoCC, nombreCC, dniCC);
 						lCliCorporativos.Add(cliCC);
+
+						Console.WriteLine("\nCliente corporativo creado con exito");
+
 					}
 					catch (Exception ex)
 					{
@@ -403,6 +430,9 @@ namespace AgenciaDeViajes
 						int idCliente = Cliente.contadorClientes;
 						Cliente cli = new Cliente(direccion, idCliente, nacionalidad, provincia, telefono, apellido, nombre, dni);
 						lclientes.Add(cli);
+
+						Console.WriteLine("\nCliente particular creado con exito");
+
 					}
 					catch (Exception ex)
 					{
@@ -457,10 +487,13 @@ namespace AgenciaDeViajes
 							ClienteCorporativo cliCC = new ClienteCorporativo(cuitCliente, razonSocial, direccionCC, idClienteCC, nacionalidadCC, provinciaCC, telefonoCC, apellidoCC, nombreCC, dniCC);
 							lCliCorporativos.Remove(clienteCorporativo);
 							lCliCorporativos.Add(cliCC);
+
+							Console.WriteLine("\nCliente corporativo editado correctamente");
+
 						}
 						else
 						{
-							Console.WriteLine("\nCliente no encontrado. Crear primero el cliente");
+							Console.WriteLine("\nCliente no encontrado. Debe crearlo primero");
 							Console.Write("\n");
 						}
 					}
@@ -497,10 +530,13 @@ namespace AgenciaDeViajes
 							Cliente cli = new Cliente(direccion, idCliente, nacionalidad, provincia, telefono, apellido, nombre, dniCliente);
 							lclientes.Remove(clienteParticular);
 							lclientes.Add(cli);
+
+							Console.WriteLine("\nCliente particular editado correctamente");
+
 						}
 						else
 						{
-							Console.WriteLine("\nCliente no encontrado. Crear primero el cliente");
+							Console.WriteLine("\nCliente no encontrado. Debe crearlo primero");
 							Console.Write("\n");
 						}
 					}
@@ -526,8 +562,10 @@ namespace AgenciaDeViajes
 
 				if (clienteParticular.Habilitado)
 				{
-					Console.Write("¿Desea inactivar el cliente?\n");
-					Console.WriteLine("s/S: Sí");
+					Console.ForegroundColor = ConsoleColor.DarkMagenta;
+					Console.Write("¿Desea inactivar el cliente?");
+					Console.ForegroundColor = ConsoleColor.Yellow;
+					Console.WriteLine("\ns/S: Sí");
 					Console.WriteLine("n/N: No");
 					ConsoleKeyInfo confirma;
 					do
@@ -544,8 +582,9 @@ namespace AgenciaDeViajes
 				}
 				else
 				{
-					Console.WriteLine("\nEl cliente ya se encuentra inactivado.\n¿Desea activar el cliente?");
-					Console.WriteLine("s/S: Sí");
+					Console.ForegroundColor = ConsoleColor.DarkMagenta;
+					Console.WriteLine("\nEl cliente ya se encuentra inactivado.\n¿Desea activarlo?");
+					Console.WriteLine("\ns/S: Sí");
 					Console.WriteLine("n/N: No");
 					ConsoleKeyInfo confirma;
 					do
@@ -572,7 +611,7 @@ namespace AgenciaDeViajes
 					if (clienteCorporativo.Habilitado)
 					{
 						Console.Write("\n\n¿Desea inactivar el cliente?");
-						Console.WriteLine("s/S: Sí");
+						Console.WriteLine("\ns/S: Sí");
 						Console.WriteLine("n/N: No");
 						ConsoleKeyInfo confirma;
 						do
@@ -589,8 +628,8 @@ namespace AgenciaDeViajes
 					}
 					else
 					{
-						Console.WriteLine("\nEl cliente ya se encuentra inactivado.\n¿Desea activar el cliente?");
-						Console.WriteLine("s/S: Sí");
+						Console.WriteLine("\nEl cliente ya se encuentra inactivado.\n¿Desea activarlo?");
+						Console.WriteLine("\ns/S: Sí");
 						Console.WriteLine("n/N: No");
 						ConsoleKeyInfo confirma;
 						do
@@ -608,12 +647,156 @@ namespace AgenciaDeViajes
 				}
 				else
 				{
-					Console.WriteLine("\nCliente no encontrado. Crear primero el cliente");
+					Console.WriteLine("\nCliente no encontrado. Debe crearlo primero");
 					Console.Write("\n");
 				}
 			}
 		}
         #endregion
+
+		#region Gestion de Lugares
+		private static void gestionLugares()
+		{
+			Console.Write("\n\nGestión de Lugares: ");
+			Console.WriteLine("\n1 - Nuevo lugar");
+			Console.WriteLine("2 - Editar lugar");
+			Console.WriteLine("3 - Baja de lugar");
+			Console.WriteLine("ESC - Salir");
+			Console.Write("Ingrese una opción: ");
+			do
+			{
+				opcion = Console.ReadKey();
+			} while (((int)opcion.KeyChar != 27) && (opcion.KeyChar < '1' || opcion.KeyChar > '3'));
+			switch (opcion.KeyChar)
+			{
+				case '1':
+					nuevoLugar();
+					break;
+				case '2':
+					editarLugar();
+					break;
+				case '3':
+					bajaLugar();
+					break;
+				default:
+					break;
+			}
+		}
+		private static void nuevoLugar() 
+		{ 
+			try
+			{
+				Console.WriteLine("\n\nIngrese el nombre del nuevo lugar:");
+				Console.Write("Nombre: ");
+				string nombre = Console.ReadLine();
+				int idLugar = Lugar.contadorLugares;
+				lugar = new Lugar(idLugar, nombre, true);
+				lLugares.Add(lugar);
+
+			}
+			catch (Exception ex)
+			{
+				Console.WriteLine("UPS" + ex.Message);
+			}
+			Console.Write("\n");
+		}
+		private static void editarLugar()
+		{
+			Console.WriteLine("\n\nLugares disponibles:");
+			foreach (Lugar l in lLugares)
+			{
+				if (l.Habilitado)
+				{
+					Console.WriteLine(" - " + l.Nombre);
+				}
+			}
+			Console.Write("\n");
+
+			try
+			{
+				Console.Write("\n\nIngrese el nombre del lugar: ");
+				nombreLugar = Console.ReadLine();
+				lugar = lLugares.Find(x => x.Nombre == nombreLugar);
+				if (lugar != null)
+				{
+
+					Console.WriteLine("Ingrese el nuevo nombre del lugar:");
+					Console.Write("Nombre: ");
+					string nombre = Console.ReadLine();
+					int idLugar = Lugar.contadorLugares;
+					Lugar lug = new Lugar(idLugar, nombre, true);
+					lLugares.Remove(lugar);
+					lLugares.Add(lug);
+
+					Console.WriteLine("\nLugar editado correctamente");
+
+				}
+				else
+				{
+					Console.WriteLine("\nLugar no encontrado. Debe crearlo primero");
+					Console.Write("\n");
+				}
+			}
+			catch (Exception ex)
+			{
+				Console.WriteLine("UPS" + ex.Message);
+			}
+			Console.Write("\n");
+        }
+		private static void bajaLugar()
+        {
+			Console.Write("\n\nIngrese el nombre del lugar: ");
+			nombreLugar = Console.ReadLine();
+			lugar = lLugares.Find(x => x.Nombre == nombreLugar);
+			if (lugar != null)
+				{
+					Console.Write("\n");
+
+					if (lugar.Habilitado)
+					{
+						Console.Write("\n\n¿Desea inactivar el cliente?");
+						Console.WriteLine("s/S: Sí");
+						Console.WriteLine("n/N: No");
+						ConsoleKeyInfo confirma;
+						do
+						{
+							confirma = Console.ReadKey(true);
+						} while ((confirma.KeyChar != 's') && (confirma.KeyChar != 'S')
+						&& (confirma.KeyChar != 'n') && (confirma.KeyChar != 'N'));
+						if (confirma.KeyChar == 's' || confirma.KeyChar == 'S')
+						{
+							lugar.Habilitado = false;
+							Console.WriteLine("\nLugar inactivado existosamente.\n");
+						}
+						else Console.Write("\n");
+					}
+					else
+					{
+						Console.WriteLine("\nEl Lugar ya se encuentra inactivado.\n¿Desea activarlo?");
+						Console.WriteLine("s/S: Sí");
+						Console.WriteLine("n/N: No");
+						ConsoleKeyInfo confirma;
+						do
+						{
+							confirma = Console.ReadKey(true);
+						} while ((confirma.KeyChar != 's') && (confirma.KeyChar != 'S')
+						&& (confirma.KeyChar != 'n') && (confirma.KeyChar != 'N'));
+						if (confirma.KeyChar == 's' || confirma.KeyChar == 'S')
+						{
+							lugar.Habilitado = true;
+							Console.WriteLine("\nLugar activado existosamente.\n");
+						}
+						else Console.Write("\n");
+					}
+				}
+				else
+				{
+					Console.WriteLine("\nLugar no encontrado. Debe primero crearlo");
+					Console.Write("\n");
+				}
+        }
+		#endregion
+
 
 		private static void listaFacturaCliente()
         {
@@ -685,5 +868,15 @@ namespace AgenciaDeViajes
 				}
 			}
 		}
+
+
+		#region Gestion de Paquetes
+		//codigo gestion paquetes
+		#endregion
+
+		#region Gestion de Ventas
+		// codigo gestion ventas
+		#endregion
+
     }
 }

@@ -10,3 +10,9 @@ C:\Users\dg260\Desktop\Proyecto .Net\Modelo\obj\Debug\Modelo.csproj.AssemblyRefe
 C:\Users\dg260\Desktop\Proyecto .Net\Modelo\obj\Debug\Modelo.csproj.CoreCompileInputs.cache
 C:\Users\dg260\Desktop\Proyecto .Net\Modelo\obj\Debug\Modelo.dll
 C:\Users\dg260\Desktop\Proyecto .Net\Modelo\obj\Debug\Modelo.pdb
+C:\Users\manun\Documents\GitHub\dotNet\Modelo\bin\Debug\Modelo.dll
+C:\Users\manun\Documents\GitHub\dotNet\Modelo\bin\Debug\Modelo.pdb
+C:\Users\manun\Documents\GitHub\dotNet\Modelo\obj\Debug\Modelo.csproj.AssemblyReference.cache
+C:\Users\manun\Documents\GitHub\dotNet\Modelo\obj\Debug\Modelo.csproj.CoreCompileInputs.cache
+C:\Users\manun\Documents\GitHub\dotNet\Modelo\obj\Debug\Modelo.dll
+C:\Users\manun\Documents\GitHub\dotNet\Modelo\obj\Debug\Modelo.pdb

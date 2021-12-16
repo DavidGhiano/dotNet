@@ -42,3 +42,25 @@ D:\Cursos\Curso .NET UTN - FRBA\Trabajo Integrador\dotNet\DatosJSON\obj\Debug\Da
 D:\Cursos\Curso .NET UTN - FRBA\Trabajo Integrador\dotNet\DatosJSON\obj\Debug\DatosJSON.csproj.CopyComplete
 D:\Cursos\Curso .NET UTN - FRBA\Trabajo Integrador\dotNet\DatosJSON\obj\Debug\DatosJSON.dll
 D:\Cursos\Curso .NET UTN - FRBA\Trabajo Integrador\dotNet\DatosJSON\obj\Debug\DatosJSON.pdb
+C:\Users\manun\Documents\GitHub\dotNet\DatosJSON\bin\Debug\DatosJSON.dll.config
+C:\Users\manun\Documents\GitHub\dotNet\DatosJSON\bin\Debug\DatosJSON.dll
+C:\Users\manun\Documents\GitHub\dotNet\DatosJSON\bin\Debug\DatosJSON.pdb
+C:\Users\manun\Documents\GitHub\dotNet\DatosJSON\bin\Debug\Modelo.dll
+C:\Users\manun\Documents\GitHub\dotNet\DatosJSON\bin\Debug\System.Buffers.dll
+C:\Users\manun\Documents\GitHub\dotNet\DatosJSON\bin\Debug\System.Memory.dll
+C:\Users\manun\Documents\GitHub\dotNet\DatosJSON\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\manun\Documents\GitHub\dotNet\DatosJSON\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\manun\Documents\GitHub\dotNet\DatosJSON\bin\Debug\System.Text.Json.dll
+C:\Users\manun\Documents\GitHub\dotNet\DatosJSON\bin\Debug\System.Text.Encodings.Web.dll
+C:\Users\manun\Documents\GitHub\dotNet\DatosJSON\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\manun\Documents\GitHub\dotNet\DatosJSON\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\manun\Documents\GitHub\dotNet\DatosJSON\bin\Debug\Modelo.pdb
+C:\Users\manun\Documents\GitHub\dotNet\DatosJSON\bin\Debug\System.Buffers.xml
+C:\Users\manun\Documents\GitHub\dotNet\DatosJSON\bin\Debug\System.Memory.xml
+C:\Users\manun\Documents\GitHub\dotNet\DatosJSON\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\manun\Documents\GitHub\dotNet\DatosJSON\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\manun\Documents\GitHub\dotNet\DatosJSON\obj\Debug\DatosJSON.csproj.AssemblyReference.cache
+C:\Users\manun\Documents\GitHub\dotNet\DatosJSON\obj\Debug\DatosJSON.csproj.CoreCompileInputs.cache
+C:\Users\manun\Documents\GitHub\dotNet\DatosJSON\obj\Debug\DatosJSON.csproj.CopyComplete
+C:\Users\manun\Documents\GitHub\dotNet\DatosJSON\obj\Debug\DatosJSON.dll
+C:\Users\manun\Documents\GitHub\dotNet\DatosJSON\obj\Debug\DatosJSON.pdb
