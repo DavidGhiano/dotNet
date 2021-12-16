@@ -71,6 +71,7 @@ namespace Modelo
 
         public abstract void CalcularImporte();
 
+        public abstract void ImprimirDatos(); 
         public override string ToString()
         {
             string cadenaLugares = "";

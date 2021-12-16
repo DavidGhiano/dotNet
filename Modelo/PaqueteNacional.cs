@@ -50,6 +50,27 @@ namespace Modelo
 
         }
 
+        public override void ImprimirDatos()
+        {
+            string cadenaLugares = "";
+            foreach (Lugar l in lugares)
+            {
+                cadenaLugares =$"{cadenaLugares} - {l.Nombre} \n";
+            }
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.Write("Nombre: ");
+            Console.ForegroundColor = ConsoleColor.Gray;
+            Console.Write($"{nombre}\t");
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.Write("Fecha: ");
+            Console.ForegroundColor = ConsoleColor.Gray;
+            Console.WriteLine($"{fechaViaje.ToString("dd/MM/yyyy")}");
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine("Lugares: ");
+            Console.ForegroundColor = ConsoleColor.Gray;
+            Console.Write(cadenaLugares);
+        }
+
         public override string ToString()
         {
             return base.ToString() + 

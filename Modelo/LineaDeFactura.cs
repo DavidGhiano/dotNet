@@ -56,6 +56,18 @@ namespace Modelo
 			return cantidad * unitario;
 		}
 
+		public void ImprimirDatos()
+        {
+			Console.ForegroundColor = ConsoleColor.White;
+			Console.Write("Cantidad: ");
+			Console.ForegroundColor = ConsoleColor.Gray;
+			Console.Write($"{cantidad}\t");
+			Console.ForegroundColor = ConsoleColor.White;
+			Console.Write("Subtotal: ");
+			Console.ForegroundColor = ConsoleColor.Gray;
+			Console.WriteLine($"{calcularSubtotal()}");
+
+		}
 		public override string ToString()
 		{
 			return "Cantidad: " + cantidad +

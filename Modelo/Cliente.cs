@@ -71,6 +71,29 @@ namespace Modelo
         public string Dni { get => dni; set => dni = value; }
         public bool Habilitado { get => habilitado; set => habilitado = value; }
 
+        public void ImprimirDatos()
+        {
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.Write("Apellido y Nombre:");
+            Console.ForegroundColor = ConsoleColor.Gray;
+            Console.WriteLine($"{apellido}, {nombre}");
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.Write("Dirección: ");
+            Console.ForegroundColor = ConsoleColor.Gray;
+            Console.Write(direccion + "\t");
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.Write("Telefono: ");
+            Console.ForegroundColor = ConsoleColor.Gray;
+            Console.WriteLine(telefono);
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.Write("Provincia: ");
+            Console.ForegroundColor = ConsoleColor.Gray;
+            Console.Write(provincia + "\t");
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.Write("Nacionalidad: ");
+            Console.ForegroundColor = ConsoleColor.Gray;
+            Console.WriteLine(nacionalidad);
+        }
         public override string ToString()
         {
             return "DNI: " + dni +

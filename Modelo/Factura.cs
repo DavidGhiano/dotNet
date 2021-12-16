@@ -54,6 +54,19 @@ namespace Modelo
 			return importeTotal = total;
 		}
 
+		public void ImprimirDatos()
+        {
+			Console.ForegroundColor = ConsoleColor.White;
+			Console.Write("Fecha: ");
+			Console.ForegroundColor = ConsoleColor.Gray;
+			Console.Write($"{fecha.ToString("dd/MM/yyyy")} \t");
+			Console.ForegroundColor = ConsoleColor.White;
+			Console.Write("Total: ");
+			Console.ForegroundColor = ConsoleColor.Gray;
+			Console.WriteLine($"{importeTotal}");
+
+		}
+
 		public override string ToString()
 		{
 			return "Número de factura: " + idFactura +
