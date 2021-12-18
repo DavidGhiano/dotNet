@@ -158,165 +158,15 @@ namespace AgenciaDeViajes
 						break;
 
 					case '6':
-						Console.WriteLine("\n\nPaquetes Nacionales:");
-						foreach (Paquete p in lPaqNac)
-						{
-							if (p.Estado)
-							{
-								Console.WriteLine(p.IdPaquete + " - " + p.Nombre);
-							}
-						}
-						Console.Write("\n");
-						Console.WriteLine("Paquetes Internacionales:");
-						foreach (Paquete p in lPaqInter)
-						{
-							if (p.Estado)
-							{
-								Console.WriteLine(p.IdPaquete + " - " + p.Nombre);
-							}
-						}
-						Console.Write("\n");
-
-						Console.Write("\nIngrese el ID del paquete: ");
-						idPaquete = int.Parse(Console.ReadLine());
-
-						paquete = lPaqInter.Find((x => x.IdPaquete == idPaquete));
-						if (paquete == null)
-						{
-							paquete = lPaqNac.Find((x => x.IdPaquete == idPaquete));
-						}
-
-						if (paquete != null)
-						{
-							Console.Write("\n");
-							Console.WriteLine(paquete.ToString());
-
-							if (paquete.Estado)
-							{
-								Console.ForegroundColor = ConsoleColor.DarkMagenta;
-								Console.Write("¿Desea inactivar el paquete?");
-								Console.WriteLine("\ns/S: Sí");
-								Console.WriteLine("n/N: No");
-								ConsoleKeyInfo confirma;
-								do
-								{
-									confirma = Console.ReadKey(true);
-								} while ((confirma.KeyChar != 's') && (confirma.KeyChar != 'S')
-								&& (confirma.KeyChar != 'n') && (confirma.KeyChar != 'N'));
-								if (confirma.KeyChar == 's' || confirma.KeyChar == 'S')
-								{
-									paquete.Estado = false;
-									Console.WriteLine("\nPaquete inactivado existosamente.\n");
-								} else Console.Write("\n");
-							}
-							else
-							{
-								Console.WriteLine("El paquete ya se encuentra inactivado.\n¿Desea activar el paquete?");
-								Console.WriteLine("\ns/S: Sí");
-								Console.WriteLine("n/N: No");
-								ConsoleKeyInfo confirma;
-								do
-								{
-									confirma = Console.ReadKey(true);
-								} while ((confirma.KeyChar != 's') && (confirma.KeyChar != 'S')
-								&& (confirma.KeyChar != 'n') && (confirma.KeyChar != 'N'));
-								if (confirma.KeyChar == 's' || confirma.KeyChar == 'S')
-								{
-									paquete.Estado = true;
-									Console.WriteLine("\nPaquete activado existosamente.\n");
-								} else Console.Write("\n");
-							}
-						}
-						else
-						{
-							Console.WriteLine("\nPaquete no encontrado.");
-							Console.Write("\n");
-						}
+						inactivarActivarPaquete();
 						break;
 
 					case '7':
-						Console.WriteLine("\n\nPaquetes Nacionales:");
-						foreach (Paquete p in lPaqNac)
-						{
-							if (p.Estado)
-							{
-								Console.WriteLine(p.IdPaquete + " - " + p.Nombre);
-							}
-						}
-						Console.Write("\n");
-
-						Console.WriteLine("Paquetes Internacionales:");
-						foreach (Paquete p in lPaqInter)
-						{
-							if (p.Estado)
-							{
-								Console.WriteLine(p.IdPaquete + " - " + p.Nombre);
-							}
-						}
-						Console.Write("\n");
-
-						Console.Write("Ingrese el ID del paquete: ");
-						idPaquete = int.Parse(Console.ReadLine());
-
-						paquete = lPaqInter.Find((x => x.IdPaquete == idPaquete && x.Estado == true));
-						if (paquete == null)
-						{
-							paquete = lPaqNac.Find((x => x.IdPaquete == idPaquete && x.Estado == true));
-						}
-
-						if (paquete != null)
-						{
-							Console.Write("\n");
-							Console.WriteLine($"Precio del paquete seleccionado: {paquete.Precio.ToString()}");
-
-							Console.Write("\nIngrese el nuevo precio: ");
-							float nuevoPrecioPaquete = float.Parse(Console.ReadLine());
-
-
-							Console.ForegroundColor = ConsoleColor.DarkMagenta;
-							Console.Write("\n¿Desea actualizar el precio del paquete?\n");
-							Console.WriteLine("s/S: Sí");
-							Console.WriteLine("n/N: No");
-							ConsoleKeyInfo confirma;
-							do
-							{
-								confirma = Console.ReadKey(true);
-							} while ((confirma.KeyChar != 's') && (confirma.KeyChar != 'S')
-							&& (confirma.KeyChar != 'n') && (confirma.KeyChar != 'N'));
-							if (confirma.KeyChar == 's' || confirma.KeyChar == 'S')
-							{
-								paquete.Precio = nuevoPrecioPaquete;
-								Console.WriteLine("\nPrecio actualizado existosamente.\n");
-							} else Console.Write("\n");
-
-						}
-						else
-						{
-							Console.WriteLine("\nPaquete no encontrado.");
-							Console.Write("\n");
-						}
+						actualizarPrecioPaquete();
 						break;
 
 					case '8':
-						Console.WriteLine("\nClientes con más de dos compras:");
-						Console.Write("\n");
-						foreach (Cliente cli in lclientes)
-						{
-							if (lFacturas.FindAll(x => x.IdCliente == cli.IdCliente).Count >= 2)
-							{
-								Console.WriteLine(" - " + cli.Nombre + " " + cli.Apellido);
-							}
-						}
-						Console.Write("\n");
-
-						foreach (ClienteCorporativo cliCorp in lCliCorporativos)
-						{
-							if (lFacturas.FindAll(x => x.IdCliente == cliCorp.IdCliente).Count >= 2)
-							{
-								Console.WriteLine(" - " + cliCorp.RazonSocial);
-							}
-						}
-						Console.Write("\n");
+						listarClientesAlMenosDosVentas();
 						break;
 
 					default:
@@ -723,7 +573,7 @@ namespace AgenciaDeViajes
 					Console.WriteLine("Ingrese el nuevo nombre del lugar:");
 					Console.Write("Nombre: ");
 					string nombre = Console.ReadLine();
-					int idLugar = Lugar.contadorLugares;
+					int idLugar = lugar.IdLugar;
 					Lugar lug = new Lugar(idLugar, nombre, true);
 					lLugares.Remove(lugar);
 					lLugares.Add(lug);
@@ -808,7 +658,8 @@ namespace AgenciaDeViajes
 			if (clienteParticular != null)
 			{
 				clienteParticular.ImprimirDatos();
-				
+				Console.Write("\n");
+
 				List<Factura> facturasCli = lFacturas.FindAll(x => x.IdCliente == clienteParticular.IdCliente);
 				foreach (Factura f in facturasCli)
 				{
@@ -869,6 +720,173 @@ namespace AgenciaDeViajes
 			}
 		}
 
+		private static void inactivarActivarPaquete()
+		{
+			Console.WriteLine("\n\nPaquetes Nacionales:");
+			foreach (Paquete p in lPaqNac)
+			{
+				if (p.Estado)
+				{
+					Console.WriteLine(p.IdPaquete + " - " + p.Nombre);
+				}
+			}
+			Console.Write("\n");
+			Console.WriteLine("Paquetes Internacionales:");
+			foreach (Paquete p in lPaqInter)
+			{
+				if (p.Estado)
+				{
+					Console.WriteLine(p.IdPaquete + " - " + p.Nombre);
+				}
+			}
+			Console.Write("\n");
+
+			Console.Write("\nIngrese el ID del paquete: ");
+			idPaquete = int.Parse(Console.ReadLine());
+
+			paquete = lPaqInter.Find((x => x.IdPaquete == idPaquete));
+			if (paquete == null)
+			{
+				paquete = lPaqNac.Find((x => x.IdPaquete == idPaquete));
+			}
+
+			if (paquete != null)
+			{
+				Console.Write("\n");
+				Console.WriteLine(paquete.ToString());
+
+				if (paquete.Estado)
+				{
+					Console.ForegroundColor = ConsoleColor.DarkMagenta;
+					Console.Write("¿Desea inactivar el paquete?");
+					Console.WriteLine("\ns/S: Sí");
+					Console.WriteLine("n/N: No");
+					ConsoleKeyInfo confirma;
+					do
+					{
+						confirma = Console.ReadKey(true);
+					} while ((confirma.KeyChar != 's') && (confirma.KeyChar != 'S')
+					&& (confirma.KeyChar != 'n') && (confirma.KeyChar != 'N'));
+					if (confirma.KeyChar == 's' || confirma.KeyChar == 'S')
+					{
+						paquete.Estado = false;
+						Console.WriteLine("\nPaquete inactivado existosamente.\n");
+					}
+					else Console.Write("\n");
+				}
+				else
+				{
+					Console.WriteLine("El paquete ya se encuentra inactivado.\n¿Desea activar el paquete?");
+					Console.WriteLine("\ns/S: Sí");
+					Console.WriteLine("n/N: No");
+					ConsoleKeyInfo confirma;
+					do
+					{
+						confirma = Console.ReadKey(true);
+					} while ((confirma.KeyChar != 's') && (confirma.KeyChar != 'S')
+					&& (confirma.KeyChar != 'n') && (confirma.KeyChar != 'N'));
+					if (confirma.KeyChar == 's' || confirma.KeyChar == 'S')
+					{
+						paquete.Estado = true;
+						Console.WriteLine("\nPaquete activado existosamente.\n");
+					}
+					else Console.Write("\n");
+				}
+			}
+			else
+			{
+				Console.WriteLine("\nPaquete no encontrado.");
+				Console.Write("\n");
+			}
+		}
+
+		private static void actualizarPrecioPaquete()
+		{
+			Console.WriteLine("\n\nPaquetes Nacionales:");
+			foreach (Paquete p in lPaqNac)
+			{
+				if (p.Estado)
+				{
+					Console.WriteLine(p.IdPaquete + " - " + p.Nombre);
+				}
+			}
+			Console.Write("\n");
+
+			Console.WriteLine("Paquetes Internacionales:");
+			foreach (Paquete p in lPaqInter)
+			{
+				if (p.Estado)
+				{
+					Console.WriteLine(p.IdPaquete + " - " + p.Nombre);
+				}
+			}
+			Console.Write("\n");
+
+			Console.Write("Ingrese el ID del paquete: ");
+			idPaquete = int.Parse(Console.ReadLine());
+
+			paquete = lPaqInter.Find((x => x.IdPaquete == idPaquete && x.Estado == true));
+			if (paquete == null)
+			{
+				paquete = lPaqNac.Find((x => x.IdPaquete == idPaquete && x.Estado == true));
+			}
+
+			if (paquete != null)
+			{
+				Console.Write("\n");
+				Console.WriteLine($"Precio del paquete seleccionado: {paquete.Precio.ToString()}");
+
+				Console.Write("\nIngrese el nuevo precio: ");
+				float nuevoPrecioPaquete = float.Parse(Console.ReadLine());
+
+
+				Console.ForegroundColor = ConsoleColor.DarkMagenta;
+				Console.Write("\n¿Desea actualizar el precio del paquete?\n");
+				Console.WriteLine("s/S: Sí");
+				Console.WriteLine("n/N: No");
+				ConsoleKeyInfo confirma;
+				do
+				{
+					confirma = Console.ReadKey(true);
+				} while ((confirma.KeyChar != 's') && (confirma.KeyChar != 'S')
+				&& (confirma.KeyChar != 'n') && (confirma.KeyChar != 'N'));
+				if (confirma.KeyChar == 's' || confirma.KeyChar == 'S')
+				{
+					paquete.Precio = nuevoPrecioPaquete;
+					Console.WriteLine("\nPrecio actualizado existosamente.\n");
+				}
+				else Console.Write("\n");
+
+			}
+			else
+			{
+				Console.WriteLine("\nPaquete no encontrado.");
+				Console.Write("\n");
+			}
+		}
+
+		private static void listarClientesAlMenosDosVentas()
+		{
+			Console.WriteLine("\nClientes con más de dos compras:");
+			Console.Write("\n");
+			foreach (Cliente cli in lclientes)
+			{
+				if (lFacturas.FindAll(x => x.IdCliente == cli.IdCliente).Count >= 2)
+				{
+					Console.WriteLine(" - " + cli.Nombre + " " + cli.Apellido);
+				}
+			}
+			Console.Write("\n");
+
+			foreach (ClienteCorporativo cliCorp in lCliCorporativos)
+			{
+				if (lFacturas.FindAll(x => x.IdCliente == cliCorp.IdCliente).Count >= 2)
+				{
+					Console.WriteLine(" - " + cliCorp.RazonSocial);
+				}
+			}
+			Console.Write("\n");
+		}
 
 		#region Gestion de Paquetes
 		//codigo gestion paquetes
