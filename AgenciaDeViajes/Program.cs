@@ -15,10 +15,13 @@ namespace AgenciaDeViajes
 		public static string dniCliente;
 		public static string cuitCliente;
 		public static int idPaquete;
+		public static int idLugar;
 		public static string nombreLugar;
 		public static ClienteCorporativo clienteCorporativo;
 		public static Cliente clienteParticular;
 		public static Paquete paquete;
+		public static PaqueteInternacional paqueteInter;
+		public static PaqueteNacional paqueteNac;
 		public static Lugar lugar;
 
 		public static List<Cliente> lclientes;
@@ -124,7 +127,7 @@ namespace AgenciaDeViajes
 				Console.WriteLine("1 - Gestionar clientes");
 				Console.WriteLine("2 - Gestionar lugares");
 				Console.WriteLine("3 - Gestionar paquetes");
-				Console.WriteLine("4 - Gestionar ventas");
+				Console.WriteLine("4 - Registrar una nueva venta");
 				Console.WriteLine("5 - Listar facturas de un cliente");
 				Console.WriteLine("6 - Inactivar/activar paquete");
 				Console.WriteLine("7 - Actualizar precio de un paquete");
@@ -146,11 +149,11 @@ namespace AgenciaDeViajes
 						break;
 
 					case '3':
-						//gestionPaquetes();
+						gestionPaquetes();
 						break;
 
 					case '4':
-						//gestionVentas();
+						nuevaVenta();
 						break;
 
 					case '5':
@@ -255,7 +258,7 @@ namespace AgenciaDeViajes
 					}
 					catch (Exception ex)
 					{
-						Console.WriteLine("UPS" + ex.Message);
+						Console.WriteLine("UPS, " + ex.Message);
 					}
 					Console.Write("\n");
 					break;
@@ -286,7 +289,7 @@ namespace AgenciaDeViajes
 					}
 					catch (Exception ex)
 					{
-						Console.WriteLine("UPS" + ex.Message);
+						Console.WriteLine("UPS, " + ex.Message);
 					}
 					Console.Write("\n");
 					break;
@@ -314,6 +317,7 @@ namespace AgenciaDeViajes
 						clienteCorporativo = lCliCorporativos.Find(x => x.Cuit == cuitCliente);
 						if (clienteCorporativo != null)
 						{
+							Console.Write("\n");
 							Console.WriteLine(clienteCorporativo.ToString());
 
 							Console.WriteLine("Ingrese los nuevos datos del cliente corporativo:");
@@ -344,12 +348,11 @@ namespace AgenciaDeViajes
 						else
 						{
 							Console.WriteLine("\nCliente no encontrado. Debe crearlo primero");
-							Console.Write("\n");
 						}
 					}
 					catch (Exception ex)
 					{
-						Console.WriteLine("UPS" + ex.Message);
+						Console.WriteLine("UPS, " + ex.Message);
 					}
 					Console.Write("\n");
 					break;
@@ -361,6 +364,7 @@ namespace AgenciaDeViajes
 						clienteParticular = lclientes.Find(x => x.Dni == dniCliente);
 						if (clienteParticular != null)
 						{
+							Console.Write("\n");
 							Console.WriteLine(clienteParticular.ToString());
 
 							Console.WriteLine("Ingrese los nuevos datos del cliente particular:");
@@ -387,12 +391,11 @@ namespace AgenciaDeViajes
 						else
 						{
 							Console.WriteLine("\nCliente no encontrado. Debe crearlo primero");
-							Console.Write("\n");
 						}
 					}
 					catch (Exception ex)
 					{
-						Console.WriteLine("UPS" + ex.Message);
+						Console.WriteLine("UPS, " + ex.Message);
 					}
 					Console.Write("\n");
 					break;
@@ -412,11 +415,12 @@ namespace AgenciaDeViajes
 
 				if (clienteParticular.Habilitado)
 				{
-					Console.ForegroundColor = ConsoleColor.DarkMagenta;
+					Console.ForegroundColor = ConsoleColor.Green;
 					Console.Write("¿Desea inactivar el cliente?");
 					Console.ForegroundColor = ConsoleColor.Yellow;
 					Console.WriteLine("\ns/S: Sí");
 					Console.WriteLine("n/N: No");
+					Console.ForegroundColor = ConsoleColor.Gray;
 					ConsoleKeyInfo confirma;
 					do
 					{
@@ -432,10 +436,12 @@ namespace AgenciaDeViajes
 				}
 				else
 				{
-					Console.ForegroundColor = ConsoleColor.DarkMagenta;
+					Console.ForegroundColor = ConsoleColor.Green;
 					Console.WriteLine("\nEl cliente ya se encuentra inactivado.\n¿Desea activarlo?");
+					Console.ForegroundColor = ConsoleColor.Yellow;
 					Console.WriteLine("\ns/S: Sí");
 					Console.WriteLine("n/N: No");
+					Console.ForegroundColor = ConsoleColor.Gray;
 					ConsoleKeyInfo confirma;
 					do
 					{
@@ -460,9 +466,12 @@ namespace AgenciaDeViajes
 
 					if (clienteCorporativo.Habilitado)
 					{
+						Console.ForegroundColor = ConsoleColor.Green;
 						Console.Write("\n\n¿Desea inactivar el cliente?");
+						Console.ForegroundColor = ConsoleColor.Yellow;
 						Console.WriteLine("\ns/S: Sí");
 						Console.WriteLine("n/N: No");
+						Console.ForegroundColor = ConsoleColor.Gray;
 						ConsoleKeyInfo confirma;
 						do
 						{
@@ -478,9 +487,12 @@ namespace AgenciaDeViajes
 					}
 					else
 					{
+						Console.ForegroundColor = ConsoleColor.Green;
 						Console.WriteLine("\nEl cliente ya se encuentra inactivado.\n¿Desea activarlo?");
+						Console.ForegroundColor = ConsoleColor.Yellow;
 						Console.WriteLine("\ns/S: Sí");
 						Console.WriteLine("n/N: No");
+						Console.ForegroundColor = ConsoleColor.Gray;
 						ConsoleKeyInfo confirma;
 						do
 						{
@@ -543,10 +555,11 @@ namespace AgenciaDeViajes
 				lugar = new Lugar(idLugar, nombre, true);
 				lLugares.Add(lugar);
 
+				Console.WriteLine("\nLugar creado con exito");
 			}
 			catch (Exception ex)
 			{
-				Console.WriteLine("UPS" + ex.Message);
+				Console.WriteLine("UPS, " + ex.Message);
 			}
 			Console.Write("\n");
 		}
@@ -557,20 +570,19 @@ namespace AgenciaDeViajes
 			{
 				if (l.Habilitado)
 				{
-					Console.WriteLine(" - " + l.Nombre);
+					Console.WriteLine(l.IdLugar + " - " + l.Nombre);
 				}
 			}
-			Console.Write("\n");
 
 			try
 			{
-				Console.Write("\n\nIngrese el nombre del lugar: ");
-				nombreLugar = Console.ReadLine();
-				lugar = lLugares.Find(x => x.Nombre == nombreLugar);
+				Console.Write("\nIngrese el ID del lugar: ");
+				idLugar = int.Parse(Console.ReadLine());
+				lugar = lLugares.Find(x => x.IdLugar == idLugar);
 				if (lugar != null)
 				{
-
-					Console.WriteLine("Ingrese el nuevo nombre del lugar:");
+					Console.Write("\n");
+					Console.WriteLine("Ingrese los nuevos datos del lugar:");
 					Console.Write("Nombre: ");
 					string nombre = Console.ReadLine();
 					int idLugar = lugar.IdLugar;
@@ -584,29 +596,40 @@ namespace AgenciaDeViajes
 				else
 				{
 					Console.WriteLine("\nLugar no encontrado. Debe crearlo primero");
-					Console.Write("\n");
 				}
 			}
 			catch (Exception ex)
 			{
-				Console.WriteLine("UPS" + ex.Message);
+				Console.WriteLine("UPS, " + ex.Message);
 			}
 			Console.Write("\n");
         }
 		private static void bajaLugar()
         {
-			Console.Write("\n\nIngrese el nombre del lugar: ");
-			nombreLugar = Console.ReadLine();
-			lugar = lLugares.Find(x => x.Nombre == nombreLugar);
+			Console.WriteLine("\n\nLugares disponibles:");
+			foreach (Lugar l in lLugares)
+			{
+				if (l.Habilitado)
+				{
+					Console.WriteLine(l.IdLugar + " - " + l.Nombre);
+				}
+			}
+
+			Console.Write("\nIngrese el ID del lugar: ");
+			idLugar = int.Parse(Console.ReadLine());
+			lugar = lLugares.Find(x => x.IdLugar == idLugar);
 			if (lugar != null)
 				{
 					Console.Write("\n");
 
 					if (lugar.Habilitado)
 					{
-						Console.Write("\n\n¿Desea inactivar el cliente?");
-						Console.WriteLine("s/S: Sí");
+						Console.ForegroundColor = ConsoleColor.Green;
+						Console.Write("¿Desea inactivar el lugar?");
+						Console.ForegroundColor = ConsoleColor.Yellow;
+						Console.WriteLine("\ns/S: Sí");
 						Console.WriteLine("n/N: No");
+						Console.ForegroundColor = ConsoleColor.Gray;
 						ConsoleKeyInfo confirma;
 						do
 						{
@@ -622,9 +645,12 @@ namespace AgenciaDeViajes
 					}
 					else
 					{
-						Console.WriteLine("\nEl Lugar ya se encuentra inactivado.\n¿Desea activarlo?");
-						Console.WriteLine("s/S: Sí");
+						Console.ForegroundColor = ConsoleColor.Green;
+						Console.Write("\nEl lugar ya se encuentra inactivado.\n¿Desea activarlo?");
+						Console.ForegroundColor = ConsoleColor.Yellow;
+						Console.WriteLine("\ns/S: Sí");
 						Console.WriteLine("n/N: No");
+						Console.ForegroundColor = ConsoleColor.Gray;
 						ConsoleKeyInfo confirma;
 						do
 						{
@@ -647,10 +673,594 @@ namespace AgenciaDeViajes
         }
 		#endregion
 
+		#region Gestion de Paquetes
+		private static void gestionPaquetes()
+		{
+			Console.Write("\n\nGestión de paquetes: ");
+			Console.WriteLine("\n1 - Nuevo paquete");
+			Console.WriteLine("2 - Editar paquete");
+			Console.WriteLine("ESC - Salir");
+			Console.Write("Ingrese una opción: ");
+			do
+			{
+				opcion = Console.ReadKey();
+			} while (((int)opcion.KeyChar != 27) && (opcion.KeyChar < '1' || opcion.KeyChar > '2'));
+			switch (opcion.KeyChar)
+			{
+				case '1':
+					nuevoPaquete();
+					break;
+				case '2':
+					editarPaquete();
+					break;
+				default:
+					break;
+			}
+		}
+		private static void nuevoPaquete()
+		{
+			Console.Write("\n\nTipo de paquete: ");
+			Console.WriteLine("\n1 - Paquete internacional");
+			Console.WriteLine("2 - Paquete nacional");
+			Console.WriteLine("ESC - Salir");
+			Console.Write("Ingrese una opción: ");
+			do
+			{
+				opcion = Console.ReadKey();
+			} while (((int)opcion.KeyChar != 27) && (opcion.KeyChar < '1' || opcion.KeyChar > '2'));
+			switch (opcion.KeyChar)
+			{
+				case '1':
+					try
+					{
+						Console.WriteLine("\n\nIngrese los datos para el nuevo paquete internacional:");
+						Console.Write("Nombre: ");
+						string nombrePI = Console.ReadLine();
+						Console.Write("Cantidad de días: ");
+						int cantidadDiasPI = int.Parse(Console.ReadLine());
+						DateTime fechaViajePI;
+						string fecha = "";
+						do
+						{
+							Console.Write("Fecha de viaje (dd/MM/yyyy): ");
+							fecha = Console.ReadLine();
+							if (DateTime.TryParse(fecha, out fechaViajePI))
+							{
+								fechaViajePI = DateTime.Parse(fecha);
+							}
+							else
+							{
+								Console.WriteLine("Formato inválido. Ingrese una fecha en el formato especificado.\n");
+							}
+						} while (!DateTime.TryParse(fecha, out fechaViajePI));
+						Console.Write("Precio: ");
+						float precioPI = float.Parse(Console.ReadLine());
+						Console.Write("Cantidad de cuotas: ");
+						int cantidadCuotasPI = int.Parse(Console.ReadLine());
+						Console.Write("Cotización del dolar: ");
+						float cotizacionDolar = float.Parse(Console.ReadLine());
+						Console.Write("Importe por impuestos: ");
+						float importePorImpuestos = float.Parse(Console.ReadLine());
+						Console.ForegroundColor = ConsoleColor.Green;
+						Console.Write("¿Requiere visa?");
+						Console.ForegroundColor = ConsoleColor.Yellow;
+						Console.WriteLine("\ns/S: Sí");
+						Console.WriteLine("n/N: No");
+						Console.ForegroundColor = ConsoleColor.Gray;
+						bool requiereVisa;
+						ConsoleKeyInfo confirma;
+						do
+						{
+							confirma = Console.ReadKey(true);
+						} while ((confirma.KeyChar != 's') && (confirma.KeyChar != 'S')
+						&& (confirma.KeyChar != 'n') && (confirma.KeyChar != 'N'));
+						if (confirma.KeyChar == 's' || confirma.KeyChar == 'S')
+						{
+							requiereVisa = true;
+						}
+						else
+						{
+							requiereVisa = false;
+						}
+						bool estadoPI = true;
+						Console.Write("\n");
+						Console.Write("Cantidad de lugares incluídos en le paquete: ");
+						int cantidadLugaresPI = int.Parse(Console.ReadLine());
+						Console.Write("\n");
+						List<Lugar> lugaresPI = new List<Lugar>();
+
+						Console.WriteLine("Lugares disponibles:");
+						foreach (Lugar l in lLugares)
+						{
+							if (l.Habilitado)
+							{
+								Console.WriteLine(l.IdLugar + " - " + l.Nombre);
+							}
+						}
+						Console.Write("\n");
+
+						for (int i = 1; i <= cantidadLugaresPI; i++)
+						{
+							Console.Write($"Ingrese el ID del lugar {i} a agregar: ");
+							idLugar = int.Parse(Console.ReadLine());
+
+							lugar = lLugares.Find(x => x.IdLugar == idLugar && x.Habilitado == true);
+							if (lugar != null)
+							{
+								if (lugaresPI.Find(x => x.IdLugar == lugar.IdLugar) == null)
+								{
+									lugaresPI.Add(lugar);
+								}
+								else
+								{
+									Console.WriteLine("\nEste lugar ya se encuentra agregado al paquete. Ingrese otro por favor.\n");
+									i--;
+								}
+							}
+							else
+							{
+								Console.WriteLine("\nLugar no encontrado. Ingrese alguno de los disponibles en lista.\n");
+								i--;
+							}
+						}
+
+						int idPaquetePI = Paquete.contadorPaquetes;
+						PaqueteInternacional paqueteInternacional = new PaqueteInternacional(cotizacionDolar, importePorImpuestos, requiereVisa, cantidadDiasPI, estadoPI, fechaViajePI, idPaquetePI, nombrePI, precioPI, cantidadCuotasPI, lugaresPI);
+						lPaqInter.Add(paqueteInternacional);
+
+						Console.WriteLine("\nPaquete internacional creado con exito");
+
+					}
+					catch (Exception ex)
+					{
+						Console.WriteLine("UPS, " + ex.Message);
+					}
+					Console.Write("\n");
+					break;
+				case '2':
+					try
+					{
+						Console.WriteLine("\n\nIngrese los datos para el nuevo paquete nacional:");
+						Console.Write("Nombre: ");
+						string nombrePN = Console.ReadLine();
+						Console.Write("Cantidad de días: ");
+						int cantidadDiasPN = int.Parse(Console.ReadLine());
+						DateTime fechaViajePN;
+						string fecha = "";
+						do
+						{
+							Console.Write("Fecha de viaje (dd/MM/yyyy): ");
+							fecha = Console.ReadLine();
+							if (DateTime.TryParse(fecha, out fechaViajePN))
+							{
+								fechaViajePN = DateTime.Parse(fecha);
+							}
+							else
+							{
+								Console.WriteLine("Formato inválido. Ingrese una fecha en el formato especificado.\n");
+							}
+						} while (!DateTime.TryParse(fecha, out fechaViajePN));
+						Console.Write("Precio: ");
+						float precioPN = float.Parse(Console.ReadLine());
+						Console.Write("Cantidad de cuotas: ");
+						int cantidadCuotasPN = int.Parse(Console.ReadLine());
+						Console.Write("Modo de pago: ");
+						string modoDePago = Console.ReadLine();
+						Console.Write("Porcentaje por impuestos: ");
+						float porcentajePorImpuestos = float.Parse(Console.ReadLine()) / 100;
+						bool estadoPN = true;
+						Console.Write("\n");
+						Console.Write("Cantidad de lugares incluídos en le paquete: ");
+						int cantidadLugaresPN = int.Parse(Console.ReadLine());
+						Console.Write("\n");
+						List<Lugar> lugaresPN = new List<Lugar>();
+
+						Console.WriteLine("Lugares disponibles:");
+						foreach (Lugar l in lLugares)
+						{
+							if (l.Habilitado)
+							{
+								Console.WriteLine(l.IdLugar + " - " + l.Nombre);
+							}
+						}
+						Console.Write("\n");
+
+						for (int i = 1; i <= cantidadLugaresPN; i++)
+						{
+							Console.Write($"Ingrese el ID del lugar {i} a agregar: ");
+							idLugar = int.Parse(Console.ReadLine());
+
+							lugar = lLugares.Find((x => x.IdLugar == idLugar && x.Habilitado == true));
+							if (lugar != null)
+							{
+								if (lugaresPN.Find(x => x.IdLugar == lugar.IdLugar) == null)
+								{
+									lugaresPN.Add(lugar);
+								}
+								else
+								{
+									Console.WriteLine("\nEste lugar ya se encuentra agregado al paquete. Ingrese otro por favor.\n");
+									i--;
+								}
+							}
+							else
+							{
+								Console.WriteLine("\nLugar no encontrado. Ingrese alguno de los disponibles en lista.\n");
+								i--;
+							}
+						}
+						int idPaquetePN = Paquete.contadorPaquetes;
+						PaqueteNacional paqueteNacional = new PaqueteNacional(modoDePago, porcentajePorImpuestos, cantidadDiasPN, estadoPN, fechaViajePN, idPaquetePN, nombrePN, precioPN, cantidadCuotasPN, lugaresPN);
+						lPaqNac.Add(paqueteNacional);
+
+						Console.WriteLine("\nPaquete nacional creado con exito");
+
+					}
+					catch (Exception ex)
+					{
+						Console.WriteLine("UPS, " + ex.Message);
+					}
+					Console.Write("\n");
+					break;
+				default:
+					break;
+			}
+		}
+		private static void editarPaquete()
+		{
+			Console.Write("\n\nTipo de paquete: ");
+			Console.WriteLine("\n1 - Paquete internacional");
+			Console.WriteLine("2 - Paquete nacional");
+			Console.WriteLine("ESC - Salir");
+			Console.Write("Ingrese una opción: ");
+			do
+			{
+				opcion = Console.ReadKey();
+			} while (((int)opcion.KeyChar != 27) && (opcion.KeyChar < '1' || opcion.KeyChar > '2'));
+			switch (opcion.KeyChar)
+			{
+				case '1':
+					try
+					{
+						Console.WriteLine("\n\nPaquetes internacionales disponibles:");
+						foreach (Paquete p in lPaqInter)
+						{
+							if (p.Estado)
+							{
+								Console.WriteLine(p.IdPaquete + " - " + p.Nombre);
+							}
+						}
+						Console.Write("\n");
+
+						Console.Write("Ingrese el ID del paquete: ");
+						idPaquete = int.Parse(Console.ReadLine());
+
+						paqueteInter = lPaqInter.Find((x => x.IdPaquete == idPaquete));
+						if (paqueteInter != null)
+						{
+							Console.Write("\n");
+							Console.WriteLine(paqueteInter.ToString());
+
+							Console.WriteLine("Ingrese los nuevos datos del paquete internacional:");
+							Console.Write("Nombre: ");
+							string nombrePI = Console.ReadLine();
+							Console.Write("Cantidad de días: ");
+							int cantidadDiasPI = int.Parse(Console.ReadLine());
+							DateTime fechaViajePI;
+							string fecha = "";
+							do
+							{
+								Console.Write("Fecha de viaje (dd/MM/yyyy): ");
+								fecha = Console.ReadLine();
+								if (DateTime.TryParse(fecha, out fechaViajePI))
+								{
+									fechaViajePI = DateTime.Parse(fecha);
+								}
+								else
+								{
+									Console.WriteLine("Formato inválido. Ingrese una fecha en el formato especificado.\n");
+								}
+							} while (!DateTime.TryParse(fecha, out fechaViajePI));
+							Console.Write("Precio: ");
+							float precioPI = float.Parse(Console.ReadLine());
+							Console.Write("Cantidad de cuotas: ");
+							int cantidadCuotasPI = int.Parse(Console.ReadLine());
+							Console.Write("Cotización del dolar: ");
+							float cotizacionDolar = float.Parse(Console.ReadLine());
+							Console.Write("Importe por impuestos: ");
+							float importePorImpuestos = float.Parse(Console.ReadLine());
+							Console.ForegroundColor = ConsoleColor.Green;
+							Console.Write("¿Requiere visa?");
+							Console.ForegroundColor = ConsoleColor.Yellow;
+							Console.WriteLine("\ns/S: Sí");
+							Console.WriteLine("n/N: No");
+							Console.ForegroundColor = ConsoleColor.Gray;
+							bool requiereVisa;
+							ConsoleKeyInfo confirma;
+							do
+							{
+								confirma = Console.ReadKey(true);
+							} while ((confirma.KeyChar != 's') && (confirma.KeyChar != 'S')
+							&& (confirma.KeyChar != 'n') && (confirma.KeyChar != 'N'));
+							if (confirma.KeyChar == 's' || confirma.KeyChar == 'S')
+							{
+								requiereVisa = true;
+							}
+							else
+							{
+								requiereVisa = false;
+							}
+							bool estadoPI = true;
+							Console.Write("\n");
+							Console.Write("Cantidad de lugares incluídos en le paquete: ");
+							int cantidadLugaresPI = int.Parse(Console.ReadLine());
+							Console.Write("\n");
+							List<Lugar> lugaresPI = new List<Lugar>();
+
+							Console.WriteLine("Lugares disponibles:");
+							foreach (Lugar l in lLugares)
+							{
+								if (l.Habilitado)
+								{
+									Console.WriteLine(l.IdLugar + " - " + l.Nombre);
+								}
+							}
+							Console.Write("\n");
+
+							for (int i = 1; i <= cantidadLugaresPI; i++)
+							{
+								Console.Write($"Ingrese el ID del lugar {i} a agregar: ");
+								idLugar = int.Parse(Console.ReadLine());
+
+								lugar = lLugares.Find(x => x.IdLugar == idLugar && x.Habilitado == true);
+								if (lugar != null)
+								{
+									if (lugaresPI.Find(x => x.IdLugar == lugar.IdLugar) == null)
+									{
+										lugaresPI.Add(lugar);
+									}
+									else
+									{
+										Console.WriteLine("\nEste lugar ya se encuentra agregado al paquete. Ingrese otro por favor.\n");
+										i--;
+									}
+								}
+								else
+								{
+									Console.WriteLine("\nLugar no encontrado. Debe crearlo primero");
+								}
+							}
+
+							int idPaquetePI = paqueteInter.IdPaquete;
+							PaqueteInternacional paqueteInternacional = new PaqueteInternacional(cotizacionDolar, importePorImpuestos, requiereVisa, cantidadDiasPI, estadoPI, fechaViajePI, idPaquetePI, nombrePI, precioPI, cantidadCuotasPI, lugaresPI);
+							lPaqInter.Remove(paqueteInter);
+							lPaqInter.Add(paqueteInternacional);
+
+							Console.WriteLine("\nPaquete internacional editado correctamente");
+						}
+						else
+						{
+							Console.WriteLine("\nPaquete no encontrado. Debe crearlo primero");
+						}
+					}
+					catch (Exception ex)
+					{
+						Console.WriteLine("UPS, " + ex.Message);
+					}
+					Console.Write("\n");
+					break;
+				case '2':
+					try
+					{
+						Console.WriteLine("\n\nPaquetes nacionales disponibles:");
+						foreach (Paquete p in lPaqNac)
+						{
+							if (p.Estado)
+							{
+								Console.WriteLine(p.IdPaquete + " - " + p.Nombre);
+							}
+						}
+						Console.Write("\n");
+
+						Console.Write("Ingrese el ID del paquete: ");
+						idPaquete = int.Parse(Console.ReadLine());
+
+						paqueteNac = lPaqNac.Find((x => x.IdPaquete == idPaquete));
+						if (paqueteNac != null)
+						{
+							Console.Write("\n");
+							Console.WriteLine(paqueteNac.ToString());
+
+							Console.WriteLine("Ingrese los nuevos datos del paquete nacional:");
+							Console.Write("Nombre: ");
+							string nombrePN = Console.ReadLine();
+							Console.Write("Cantidad de días: ");
+							int cantidadDiasPN = int.Parse(Console.ReadLine());
+							DateTime fechaViajePN;
+							string fecha = "";
+							do
+							{
+								Console.Write("Fecha de viaje (dd/MM/yyyy): ");
+								fecha = Console.ReadLine();
+								if (DateTime.TryParse(fecha, out fechaViajePN))
+								{
+									fechaViajePN = DateTime.Parse(fecha);
+								}
+								else
+								{
+									Console.WriteLine("Formato inválido. Ingrese una fecha en el formato especificado.\n");
+								}
+							} while (!DateTime.TryParse(fecha, out fechaViajePN));
+							Console.Write("Precio: ");
+							float precioPN = float.Parse(Console.ReadLine());
+							Console.Write("Cantidad de cuotas: ");
+							int cantidadCuotasPN = int.Parse(Console.ReadLine());
+							Console.Write("Modo de pago: ");
+							string modoDePago = Console.ReadLine();
+							Console.Write("Porcentaje por impuestos: ");
+							float porcentajePorImpuestos = float.Parse(Console.ReadLine()) / 100;
+							bool estadoPN = true;
+							Console.Write("\n");
+							Console.Write("Cantidad de lugares incluídos en le paquete: ");
+							int cantidadLugaresPN = int.Parse(Console.ReadLine());
+							Console.Write("\n");
+							List<Lugar> lugaresPN = new List<Lugar>();
+
+							Console.WriteLine("Lugares disponibles:");
+							foreach (Lugar l in lLugares)
+							{
+								if (l.Habilitado)
+								{
+									Console.WriteLine(l.IdLugar + " - " + l.Nombre);
+								}
+							}
+							Console.Write("\n");
+
+							for (int i = 1; i <= cantidadLugaresPN; i++)
+							{
+								Console.Write($"Ingrese el ID del lugar {i} a agregar: ");
+								idLugar = int.Parse(Console.ReadLine());
+
+								lugar = lLugares.Find((x => x.IdLugar == idLugar && x.Habilitado == true));
+								if (lugar != null)
+								{
+									if (lugaresPN.Find(x => x.IdLugar == lugar.IdLugar) == null)
+									{
+										lugaresPN.Add(lugar);
+									}
+									else
+									{
+										Console.WriteLine("\nEste lugar ya se encuentra agregado al paquete. Ingrese otro por favor.\n");
+										i--;
+									}
+								}
+								else
+								{
+									Console.WriteLine("\nLugar no encontrado. Debe crearlo primero");
+								}
+							}
+							int idPaquetePN = paqueteNac.IdPaquete;
+							PaqueteNacional paqueteNacional = new PaqueteNacional(modoDePago, porcentajePorImpuestos, cantidadDiasPN, estadoPN, fechaViajePN, idPaquetePN, nombrePN, precioPN, cantidadCuotasPN, lugaresPN);
+							lPaqNac.Remove(paqueteNac);
+							lPaqNac.Add(paqueteNacional);
+
+							Console.WriteLine("\nPaquete nacional editado correctamente");
+						}
+						else
+						{
+							Console.WriteLine("\nPaquete no encontrado. Debe crearlo primero");
+						}
+					}
+					catch (Exception ex)
+					{
+						Console.WriteLine("UPS, " + ex.Message);
+					}
+					Console.Write("\n");
+					break;
+				default:
+					break;
+			}
+		}
+		#endregion
+
+		#region Gestion de Ventas
+		private static void nuevaVenta()
+		{
+			try
+			{
+				Console.WriteLine("\n\nIngrese los datos de la nueva venta:");
+				DateTime fechaFactura = DateTime.Now;
+				int idFactura = Factura.contadorFacturas;
+				Console.Write("Ingrese el DNI del viajante: ");
+				dniCliente = Console.ReadLine();
+				clienteParticular = lclientes.Find(x => x.Dni == dniCliente);
+				clienteCorporativo = lCliCorporativos.Find(x => x.Dni == dniCliente);
+				if (clienteParticular != null || clienteCorporativo != null)
+				{
+					int idCliente = 0;
+					if (clienteParticular != null) idCliente = clienteParticular.IdCliente;
+					else idCliente = clienteCorporativo.IdCliente;
+
+					Console.Write("Cantidad de paquetes a vender: ");
+					int cantidadPaquetes = int.Parse(Console.ReadLine());
+					Console.Write("\n");
+					List<LineaDeFactura> lineas = new List<LineaDeFactura>();
+					Console.WriteLine("Paquetes nacionales disponibles:");
+					foreach (Paquete p in lPaqNac)
+					{
+						if (p.Estado)
+						{
+							Console.WriteLine(p.IdPaquete + " - " + p.Nombre);
+						}
+					}
+					Console.Write("\n");
+
+					Console.WriteLine("Paquetes internacionales disponibles:");
+					foreach (Paquete p in lPaqInter)
+					{
+						if (p.Estado)
+						{
+							Console.WriteLine(p.IdPaquete + " - " + p.Nombre);
+						}
+					}
+					Console.Write("\n");
+
+					for (int i = 1; i <= cantidadPaquetes; i++)
+					{
+						Console.Write($"Ingrese el ID del paquete {i} a agregar: ");
+						int idPaquete = int.Parse(Console.ReadLine());
+
+						paquete = lPaqInter.Find((x => x.IdPaquete == idPaquete));
+						if (paquete == null)
+						{
+							paquete = lPaqNac.Find((x => x.IdPaquete == idPaquete));
+						}
+
+						if (paquete != null)
+						{
+							if (lineas.Find(x => x.IdPaquete == idPaquete) == null)
+							{
+								Console.Write("Ingrese la cantidad a vender de este paquete: ");
+								int cantidad = int.Parse(Console.ReadLine());
+								float unitario = paquete.ImporteTotal;
+								int idLineaDeFactura = LineaDeFactura.contadorLineasFactura;
+								LineaDeFactura lineaFactura = new LineaDeFactura(idFactura, idLineaDeFactura, cantidad, unitario, idPaquete);
+								lineas.Add(lineaFactura);
+								lLineaFacturas.Add(lineaFactura);
+								Console.Write("\n");
+							}
+							else
+							{
+								Console.WriteLine("\nEste paquete ya se encuentra agregado a la venta. Ingrese otro por favor.\n");
+								i--;
+							}
+						}
+						else
+						{
+							Console.WriteLine("\nPaquete no encontrado. Ingrese un paquete disponible de la lista.\n");
+							i--;
+						}
+					}
+					Factura factura = new Factura(fechaFactura, idFactura, idCliente, lineas);
+					lFacturas.Add(factura);
+
+					Console.WriteLine("Venta creada con exito");
+				}
+				else
+				{
+					Console.WriteLine("\nCliente no encontrado. Debe crearlo primero");
+				}
+			}
+			catch (Exception ex)
+			{
+				Console.WriteLine("UPS, " + ex.Message);
+			}
+			Console.Write("\n");
+		}
+		#endregion
 
 		private static void listaFacturaCliente()
         {
-			Console.ForegroundColor = ConsoleColor.White;
 			Console.Write("\n\nIngrese el DNI del cliente: ");
 			Console.ForegroundColor = ConsoleColor.Gray;
 			dniCliente = Console.ReadLine();
@@ -679,12 +1289,11 @@ namespace AgenciaDeViajes
 						}
 						paquete1.ImprimirDatos();
 						lf.ImprimirDatos();
-						//Console.WriteLine(paquete1.ToString());
 					}
 					Console.ForegroundColor = ConsoleColor.Cyan;
 					Console.WriteLine($"============== FIN FACTURA==============");
 					Console.ResetColor();
-					Console.WriteLine("\n");
+					Console.Write("\n");
 				}
 			}
 			else
@@ -693,30 +1302,40 @@ namespace AgenciaDeViajes
 				if (clienteCorporativo != null)
 				{
 					Console.WriteLine(clienteCorporativo.ToString());
+					Console.Write("\n");
+
 					List<Factura> facturasCli = lFacturas.FindAll(x => x.IdCliente == clienteCorporativo.IdCliente);
 					foreach (Factura f in facturasCli)
 					{
-						Console.WriteLine(f.ToString());
+						Console.ForegroundColor = ConsoleColor.Cyan;
+						Console.WriteLine($"============== FACTURA: {f.IdFactura}==============");
+
+						f.ImprimirDatos();
 						Paquete paquete1 = null;
 						foreach (LineaDeFactura lf in f.LineasDeFactura)
 						{
+							Console.WriteLine("--------------------------------------------");
+
 							paquete1 = lPaqInter.Find(x => x.IdPaquete == lf.IdPaquete);
 							if (paquete1 == null)
 							{
 								paquete1 = lPaqNac.Find(x => x.IdPaquete == lf.IdPaquete);
 							}
-
-							Console.WriteLine(lf.ToString());
-							Console.WriteLine(paquete1.ToString());
+							paquete1.ImprimirDatos();
+							lf.ImprimirDatos();
 						}
+						Console.ForegroundColor = ConsoleColor.Cyan;
+						Console.WriteLine($"============== FIN FACTURA==============");
+						Console.ResetColor();
+						Console.Write("\n");
 					}
-					Console.Write("\n");
 				}
 				else
 				{
 					Console.WriteLine("\nCliente no encontrado. Crear primero el cliente");
 					Console.Write("\n");
 				}
+				
 			}
 		}
 
@@ -741,7 +1360,7 @@ namespace AgenciaDeViajes
 			}
 			Console.Write("\n");
 
-			Console.Write("\nIngrese el ID del paquete: ");
+			Console.Write("Ingrese el ID del paquete: ");
 			idPaquete = int.Parse(Console.ReadLine());
 
 			paquete = lPaqInter.Find((x => x.IdPaquete == idPaquete));
@@ -757,10 +1376,12 @@ namespace AgenciaDeViajes
 
 				if (paquete.Estado)
 				{
-					Console.ForegroundColor = ConsoleColor.DarkMagenta;
+					Console.ForegroundColor = ConsoleColor.Green;
 					Console.Write("¿Desea inactivar el paquete?");
+					Console.ForegroundColor = ConsoleColor.Yellow;
 					Console.WriteLine("\ns/S: Sí");
 					Console.WriteLine("n/N: No");
+					Console.ForegroundColor = ConsoleColor.Gray;
 					ConsoleKeyInfo confirma;
 					do
 					{
@@ -776,9 +1397,12 @@ namespace AgenciaDeViajes
 				}
 				else
 				{
+					Console.ForegroundColor = ConsoleColor.Green;
 					Console.WriteLine("El paquete ya se encuentra inactivado.\n¿Desea activar el paquete?");
+					Console.ForegroundColor = ConsoleColor.Yellow;
 					Console.WriteLine("\ns/S: Sí");
 					Console.WriteLine("n/N: No");
+					Console.ForegroundColor = ConsoleColor.Gray;
 					ConsoleKeyInfo confirma;
 					do
 					{
@@ -839,11 +1463,12 @@ namespace AgenciaDeViajes
 				Console.Write("\nIngrese el nuevo precio: ");
 				float nuevoPrecioPaquete = float.Parse(Console.ReadLine());
 
-
-				Console.ForegroundColor = ConsoleColor.DarkMagenta;
-				Console.Write("\n¿Desea actualizar el precio del paquete?\n");
-				Console.WriteLine("s/S: Sí");
+				Console.ForegroundColor = ConsoleColor.Green;
+				Console.Write("\n¿Desea actualizar el precio del paquete?");
+				Console.ForegroundColor = ConsoleColor.Yellow;
+				Console.WriteLine("\ns/S: Sí");
 				Console.WriteLine("n/N: No");
+				Console.ForegroundColor = ConsoleColor.Gray;
 				ConsoleKeyInfo confirma;
 				do
 				{
@@ -869,6 +1494,7 @@ namespace AgenciaDeViajes
 		{
 			Console.WriteLine("\nClientes con más de dos compras:");
 			Console.Write("\n");
+			Console.WriteLine("Clientes particulares:");
 			foreach (Cliente cli in lclientes)
 			{
 				if (lFacturas.FindAll(x => x.IdCliente == cli.IdCliente).Count >= 2)
@@ -878,6 +1504,7 @@ namespace AgenciaDeViajes
 			}
 			Console.Write("\n");
 
+			Console.WriteLine("Clientes corporativos:");
 			foreach (ClienteCorporativo cliCorp in lCliCorporativos)
 			{
 				if (lFacturas.FindAll(x => x.IdCliente == cliCorp.IdCliente).Count >= 2)
@@ -887,14 +1514,5 @@ namespace AgenciaDeViajes
 			}
 			Console.Write("\n");
 		}
-
-		#region Gestion de Paquetes
-		//codigo gestion paquetes
-		#endregion
-
-		#region Gestion de Ventas
-		// codigo gestion ventas
-		#endregion
-
-    }
+	}
 }

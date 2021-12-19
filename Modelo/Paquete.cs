@@ -76,7 +76,7 @@ namespace Modelo
         {
             string cadenaLugares = "";
             foreach(Lugar l in lugares){
-                cadenaLugares = cadenaLugares + l.Nombre + "\n";
+                cadenaLugares = cadenaLugares + "- " + l.Nombre + "\n";
 			}
             return "ID Paquete: " + idPaquete.ToString() +
                 "\nNombre: " + nombre +
@@ -86,7 +86,7 @@ namespace Modelo
                 "\nCantidad de cuotas: " + cantidadCuota.ToString() +
                 "\nImporte total: " + importeTotal.ToString() +
                 "\nEstado: " + estado.ToString() +
-                "\nLugares: " + cadenaLugares;
+                "\nLugares: \n" + cadenaLugares;
         }
 
     }
